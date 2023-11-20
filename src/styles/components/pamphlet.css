@@ -1,0 +1,17 @@
+.pamphlet-content {
+  position: absolute;
+  transform: rotate(-2deg);
+  top: 20px;
+  bottom: 40px;
+  inset-inline: 0px;
+  max-width: min(321px, calc(100% - 32px));
+  margin: 0px auto;
+}
+
+@media screen and (min-width: 640px) {
+  .pamphlet-content {
+    top: 36px;
+    bottom: 60px;
+    max-width: min(1240px, calc(100% - 32px));
+  }
+}

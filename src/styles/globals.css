@@ -2,26 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer components {
+  @import url('./components/pamphlet.css');
+  @import url('./components/button.css');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer utilities {
+  .heading-outline {
+    text-shadow: 0.03em 0.03em 0.55px #292827;
+    -webkit-text-stroke: 0.01em #f1eee4;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  h1,
+  h2,
+  h1 > *,
+  h2 > * {
+    @apply heading-outline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-capitolina;
+  }
+
+  h1,
+  h1 > * {
+    @apply text-primary-red text-h1 lg:text-h1-lg;
+  }
+
+  h2,
+  h2 > * {
+    @apply text-primary-red text-h2;
+  }
+
+  h3 {
+    @apply text-neutral-black text-h3 lg:text-h3-lg;
+  }
+
+  h4 {
+    @apply text-neutral-black text-h4;
+  }
+
+  h5 {
+    @apply text-neutral-black text-h5;
+  }
+
+  h6 {
+    @apply text-neutral-gray text-h6 uppercase;
+  }
+
+  body {
+    @apply font-merriweather text-body text-neutral-gray bg-neutral-white;
+  }
 }
