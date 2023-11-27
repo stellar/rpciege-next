@@ -25,10 +25,6 @@ const merriweather = Merriweather({ weight: ['400'], subsets: ['latin'], display
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <link rel="stylesheet" href="https://use.typekit.net/haz1nwo.css" />
-      </Head>
-
       <style jsx global>{`
         html {
           --font-nanum: ${nanumGothicCoding.style.fontFamily};

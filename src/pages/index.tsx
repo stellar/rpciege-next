@@ -1,51 +1,61 @@
 import Image from 'next/image';
-
-import pamphlet from '@/assets/marketing/pamphlet.png';
-import pamphletLg from '@/assets/marketing/pamphlet-lg.png';
-import cardFrame from '@/assets/marketing/card-frame.png';
-import cardFrameLg from '@/assets/marketing/card-frame-lg.png';
-import horrorPack from '@/assets/marketing/horror-pack.png';
-import discordCard from '@/assets/marketing/discord-card.png';
 import clsx from 'clsx';
 import Link from 'next/link';
+
+import { CardSleeve } from '@/components/CardSleeve';
+
+import pamphlet1 from '@/assets/marketing/pamphlet-1.png';
+import pamphlet1Lg from '@/assets/marketing/pamphlet-1-lg.png';
+
+import cardFrame from '@/assets/marketing/card-frame.png';
+import cardFrameLg from '@/assets/marketing/card-frame-lg.png';
+import discordCard from '@/assets/marketing/discord-card.png';
+
+import pamphlet2 from '@/assets/marketing/pamphlet-2.png';
+import pamphlet2Lg from '@/assets/marketing/pamphlet-2-lg.png';
+
+import communityBg from '@/assets/marketing/community-bg.png';
+import communityBgLg from '@/assets/marketing/community-bg-lg.png';
+
+import youtubeCard from '@/assets/marketing/youtube-card.png';
+import twitterCard from '@/assets/marketing/twitter-card.png';
+import blogCard from '@/assets/marketing/blog-card.png';
+
+import fca00cTv from '@/assets/marketing/fca00c-tv.png';
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      {/* <ShapeTheFuture /> */}
-      {/* <GatherYourArmy /> */}
-      {/* <ForgeAlliances /> */}
+      <ShapeTheFuture />
+      <GatherYourArmy />
+      <ForgeAlliances />
+      <PrepareForTheSiege />
+      <Community />
+      <Fca00c />
     </main>
   );
 }
 
 const ShapeTheFuture = () => {
   return (
-    <div className="relative text-body-lg max-w-max mx-auto isolate mb-52">
+    <div className="relative text-body-lg max-w-max mx-auto isolate">
       <Image
-        src={pamphlet}
+        src={pamphlet1}
         alt="pamphlet"
-        className="object-cover sm:hidden pointer-events-none"
-        style={{ height: pamphlet.height }}
+        className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%-8px)] sm:hidden"
+        style={{ height: pamphlet1.height }}
         aria-hidden="true"
       />
 
       <Image
-        src={pamphletLg}
+        src={pamphlet1Lg}
         alt="pamphlet"
-        className="object-cover hidden sm:block pointer-events-none"
-        style={{ height: pamphletLg.height }}
+        className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%-20px)] hidden sm:block"
+        style={{ height: pamphlet1Lg.height }}
         aria-hidden="true"
       />
 
-      <Image
-        src={horrorPack}
-        alt="pamphlet"
-        className="absolute -bottom-52 left-0 rotate-[-70deg] pointer-events-none"
-        aria-hidden="true"
-      />
-
-      <div className="pamphlet-content pt-8 sm:pt-14 sm:px-3 lg:px-8 flex flex-col">
+      <div className="pamphlet-content flex flex-col pt-8 pl-10 sm:pt-14 sm:px-5 md:px-10 lg:px-20">
         <h3>Shape the future!</h3>
 
         <div
@@ -91,7 +101,7 @@ const ShapeTheFuture = () => {
 
 const GatherYourArmy = () => {
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="mt-20 flex flex-col items-center gap-4">
       <h2 className="text-[0.35rem] sm:text-[0.6rem] lg:text-[1rem] leading-none text-center">
         <span className="text-[11em] block mr-[0.5em]">Gather</span>
         <span className="text-[8.77em] italic align-top leading-[0.75]">Your</span>
@@ -138,16 +148,14 @@ const GatherYourArmy = () => {
 
 const ForgeAlliances = () => {
   return (
-    <div className="relative max-w-[1100px] mx-auto mb-[1000px] flex flex-col items-center">
-      <div className="px-4 max-w-[800px] lg:mr-auto">
-        <h1 className="">
+    <div className="mt-32 relative max-w-[1100px] mx-auto flex flex-col items-center lg:items-start lg:flex-row gap-y-4">
+      <div className="px-4 max-w-[800px]">
+        <h1>
           <span className="italic">Forge</span> <span className="font-extrabold">Alliances</span>
         </h1>
 
         <div className="mt-10 lg:ml-24">
-          <span className="float-left leading-[0.6] mr-2 text-h2 font-capitolina heading-outline text-primary-red">
-            W
-          </span>
+          <span className="drop-cap">W</span>
 
           <p>
             <span className="text-h5 font-capitolina">hat is success if you can’t celebrate </span>
@@ -164,14 +172,145 @@ const ForgeAlliances = () => {
         </div>
       </div>
 
-      <Link href="/" className="absolute top-full lg:top-0 lg:-right-24">
-        <Image
-          src={discordCard}
-          alt="Discord invite"
-          className="relative left-1/2 -translate-x-[calc(50%-40px)] min-w-max"
-          style={{ height: discordCard.height }}
-        />
+      <Link href="/" className="rotate-12 py-8">
+        <CardSleeve>
+          <Image src={discordCard} alt="Discord invite" />
+        </CardSleeve>
       </Link>
+    </div>
+  );
+};
+
+// Random leaderboard data
+const leaderboard = [
+  ['GDCIR2JGAOQV2LWC3PQVLUSQAUXHZ7BBULCB2CC5KMCWSSDUKIXPFM77', '1576599152'],
+  ['GCD3CADJSJUQ67YDOY6ULBAZVNVVPK6BUYDZJJNWSINIUJ7V37EXFFT6', '1675839629'],
+  ['GAFIRIZGJS4EVTFYHS56U3G2CQC5HC5MQG2RS6ARB4KQ4ABMEHF7B4RJ', '1678677215'],
+  ['GA5PJMXCSVGZG767NSWTZGIT6M7PV5JT3MRH7EZ472TGR4GWXFFUSB52', '1642454335'],
+  ['GDFI4POKUN7QWT3CIY3LNT5ONOHX67UP7T3ZTJWJPGYZFOHA5Y3SH6RZ', '1665614576'],
+  ['GB3MA4K6OVM7UDUUKN4XROK5XKDJRR2SWHO2BZ72T74GAIWSUTBCYOHT', '1555117775'],
+];
+
+const PrepareForTheSiege = () => {
+  return (
+    <div className="relative">
+      <Image
+        src={pamphlet2}
+        alt="pamphlet"
+        className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%+8px)] sm:hidden"
+        style={{ height: pamphlet2.height }}
+        aria-hidden="true"
+      />
+
+      <Image
+        src={pamphlet2Lg}
+        alt="pamphlet"
+        className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%+4px)] hidden sm:block"
+        style={{ height: pamphlet2Lg.height }}
+        aria-hidden="true"
+      />
+
+      <div className={clsx('pamphlet-content-clockwise pt-6 pl-2', 'sm:pt-11 sm:px-7')}>
+        <h3>Prepare for the siege!</h3>
+
+        <div className="mt-32 flex flex-wrap gap-x-12 gap-y-4 max-w-4xl">
+          <table className="flex-1 pamphlet-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Address</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {leaderboard.map(([key, timestamp], i) => {
+                return (
+                  <tr key={key}>
+                    <td>{i + 1}</td>
+                    <td>{`${key.substring(0, 5)}...${key.substring(key.length - 5)}`}</td>
+                    <td>{timestamp}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+          <p className="flex-1 basis-3/5 mt-4 first-line:text-h5 first-line:font-capitolina">
+            <span className="drop-cap">B</span>race yourselves, adventurers! New sieges are released
+            periodically, where you will leverage Soroban, Stellar's smart contract platform, to
+            complete a set of skirmishes. Or put your mettle to the test by revisiting previous
+            games and claiming the top spot in the corresponding leaderboard.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Community = () => {
+  return (
+    <div className="mt-12 sm:-mt-56 relative flex justify-center">
+      <Image
+        src={communityBg}
+        alt="Family playing board games"
+        style={{ height: communityBg.height }}
+        className="object-cover mx-auto drop-shadow-[0px_0px_20px_#000] pointer-events-none absolute sm:hidden -z-10"
+        aria-hidden="true"
+      />
+
+      <Image
+        src={communityBgLg}
+        alt="Family playing board games"
+        style={{ height: communityBgLg.height }}
+        className="object-cover mx-auto drop-shadow-[0px_0px_20px_#000] pointer-events-none hidden sm:block -z-10"
+        aria-hidden="true"
+      />
+
+      <div className="pt-20 sm:absolute sm:pt-72">
+        <p className="text-neutral-white font-capitolina text-4xl font-extrabold text-center max-w-xs sm:max-w-none">
+          Don’t worry, your allies are always by your side!
+        </p>
+
+        <div className="mt-7.5 flex flex-col items-center gap-4 sm:flex-row sm:gap-12">
+          <Link href="/" className="-rotate-12 relative">
+            <CardSleeve>
+              <Image src={youtubeCard} alt="youtube card" />
+            </CardSleeve>
+          </Link>
+
+          <Link href="/" className="sm:mb-[20%]">
+            <CardSleeve>
+              <Image src={twitterCard} alt="youtube card" />
+            </CardSleeve>
+          </Link>
+
+          <Link href="/" className="rotate-12">
+            <CardSleeve>
+              <Image src={blogCard} alt="youtube card" />
+            </CardSleeve>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Fca00c = () => {
+  return (
+    <div className="mt-24 text-center">
+      <h3>Want more games?</h3>
+
+      <p className="mt-5">
+         Check out Fast, Cheap & Out of Control to find more coding challenges on Soroban.
+      </p>
+
+      <Image
+        src={fca00cTv}
+        alt=""
+        className="mx-auto object-cover pointer-events-none -z-10 w-auto h-[500px] -mt-12 sm:h-[1000px] sm:-mt-40"
+        aria-hidden="true"
+      />
     </div>
   );
 };

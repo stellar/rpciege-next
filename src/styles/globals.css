@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  @import url('./components/pamphlet.css');
-  @import url('./components/button.css');
-}
-
 @layer utilities {
   .heading-outline {
     text-shadow: 0.03em 0.03em 0.55px #292827;
     -webkit-text-stroke: 0.01em #f1eee4;
   }
+
+  .drop-cap {
+    @apply mr-2 font-capitolina text-primary-red text-h2 leading-[0.7] float-left heading-outline;
+  }
+}
+
+@layer components {
+  @import url('./components/button.css');
+  @import url('./components/pamphlet.css');
 }
 
 @layer base {
