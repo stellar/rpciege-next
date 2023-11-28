@@ -23,9 +23,12 @@ import blogCard from '@/assets/marketing/blog-card.png';
 
 import fca00cTv from '@/assets/marketing/fca00c-tv.png';
 
+import { Banner } from '@/features/landing';
+
 export default function Home() {
   return (
     <main className="overflow-hidden">
+      <Banner />
       <ShapeTheFuture />
       <GatherYourArmy />
       <ForgeAlliances />
@@ -38,10 +41,10 @@ export default function Home() {
 
 const ShapeTheFuture = () => {
   return (
-    <div className="relative text-body-lg max-w-max mx-auto isolate">
+    <div className="mt-8 relative text-body-lg max-w-max mx-auto isolate -z-10">
       <Image
         src={pamphlet1}
-        alt="pamphlet"
+        alt=""
         className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%-8px)] sm:hidden"
         style={{ height: pamphlet1.height }}
         aria-hidden="true"
@@ -49,7 +52,7 @@ const ShapeTheFuture = () => {
 
       <Image
         src={pamphlet1Lg}
-        alt="pamphlet"
+        alt=""
         className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%-20px)] hidden sm:block"
         style={{ height: pamphlet1Lg.height }}
         aria-hidden="true"
@@ -111,7 +114,7 @@ const GatherYourArmy = () => {
       <div className="relative flex flex-col items-center">
         <Image
           src={cardFrame}
-          alt="Card Frame"
+          alt=""
           aria-hidden="true"
           className="object-cover [object-position:calc(50%+10px)] md:hidden"
           style={{ height: cardFrame.height }}
@@ -119,7 +122,7 @@ const GatherYourArmy = () => {
 
         <Image
           src={cardFrameLg}
-          alt="Card Frame"
+          alt=""
           aria-hidden="true"
           className="object-cover hidden md:block"
           style={{ height: cardFrameLg.height }}
@@ -133,10 +136,10 @@ const GatherYourArmy = () => {
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-7 mt-12 md:mt-15">
-            <Link href="/" className="button">
+            <Link href="/" className="button button-primary">
               Play RPCiege
             </Link>
-            <Link href="/" className="button">
+            <Link href="/" className="button button-primary">
               Claim Cards
             </Link>
           </div>
@@ -196,7 +199,7 @@ const PrepareForTheSiege = () => {
     <div className="relative">
       <Image
         src={pamphlet2}
-        alt="pamphlet"
+        alt=""
         className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%+8px)] sm:hidden"
         style={{ height: pamphlet2.height }}
         aria-hidden="true"
@@ -204,7 +207,7 @@ const PrepareForTheSiege = () => {
 
       <Image
         src={pamphlet2Lg}
-        alt="pamphlet"
+        alt=""
         className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%+4px)] hidden sm:block"
         style={{ height: pamphlet2Lg.height }}
         aria-hidden="true"
@@ -253,7 +256,7 @@ const Community = () => {
     <div className="mt-12 sm:-mt-56 relative flex justify-center">
       <Image
         src={communityBg}
-        alt="Family playing board games"
+        alt=""
         style={{ height: communityBg.height }}
         className="object-cover mx-auto drop-shadow-[0px_0px_20px_#000] pointer-events-none absolute sm:hidden -z-10"
         aria-hidden="true"
@@ -261,7 +264,7 @@ const Community = () => {
 
       <Image
         src={communityBgLg}
-        alt="Family playing board games"
+        alt=""
         style={{ height: communityBgLg.height }}
         className="object-cover mx-auto drop-shadow-[0px_0px_20px_#000] pointer-events-none hidden sm:block -z-10"
         aria-hidden="true"
