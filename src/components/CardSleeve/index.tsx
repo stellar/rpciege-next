@@ -10,7 +10,7 @@ type CardSleeveProps = {
 
 export const CardSleeve = (props: CardSleeveProps) => {
   return (
-    <div className={clsx('group relative p-1 pt-6', styles.CardSleeve, props.className)}>
+    <div className={clsx('group p-1 pt-6 max-w-max', styles.CardSleeve, props.className)}>
       <figure
         className="absolute inset-0 drop-shadow-xl bg-cover pointer-events-none z-10 border border-neutral-white/40"
         style={{ backgroundImage: `url(${cardSleeve.src})` }}

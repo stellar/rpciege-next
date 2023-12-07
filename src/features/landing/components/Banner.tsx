@@ -11,10 +11,10 @@ import vikingRaider from '@/assets/marketing/viking-raider.png';
 
 export const Banner = () => {
   return (
-    <div className="relative">
+    <div className="relative z-10">
       <BannerBackground />
 
-      <Link href="/" className="absolute left-1/2 -translate-x-1/2 min-w-max bottom-[30%] z-20">
+      <Link href="/" className="absolute left-1/2 -translate-x-1/2 min-w-max bottom-[30%]">
         <CardSleeve>
           <div className="button button-secondary">Get Started</div>
         </CardSleeve>
@@ -29,22 +29,22 @@ const BannerBackground = () => {
       <Image
         src={banner}
         alt=""
-        className="object-cover mx-auto drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)] sm:hidden"
-        style={{ height: banner.height }}
+        className="pointer-events-none drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)] sm:hidden"
+        aria-hidden="true"
       />
 
       <Image
         src={bannerLg}
         alt=""
-        className="object-cover object-center mx-auto drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)] min-w-max hidden sm:block"
-        style={{ height: bannerLg.height }}
+        className="pointer-events-none drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)] hidden sm:block"
+        aria-hidden="true"
       />
 
-      <CardSleeve className="!absolute rotate-12 bottom-0 left-0 hidden sm:block">
+      <CardSleeve className="absolute rotate-12 bottom-0 left-0 hidden sm:block">
         <Image src={vikingRaider} alt="" className="drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)]" />
       </CardSleeve>
 
-      <CardSleeve className="!absolute -rotate-12 -bottom-64 right-10 hidden sm:block">
+      <CardSleeve className="absolute -rotate-12 -bottom-64 right-10 hidden sm:block">
         <Image src={orbitalCannon} alt="" className="drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)]" />
       </CardSleeve>
     </div>

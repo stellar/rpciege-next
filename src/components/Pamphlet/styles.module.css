@@ -1,0 +1,7 @@
+.PamphletTitle {
+  @apply h-40 flex items-center sm:h-36;
+}
+
+.PamphletContent {
+  @apply absolute w-full top-4 bottom-12 px-4 max-w-xs sm:max-w-6xl sm:top-6;
+}

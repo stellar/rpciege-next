@@ -44,6 +44,8 @@ const config: Config = {
         'h1-bold-lg': ['7.8125rem', { fontWeight: '800', lineHeight: '100%' }],
         body: ['1rem', { lineHeight: '175%' }],
         'body-lg': ['1.125rem', { lineHeight: '175%' }],
+        descriptor: ['1.75rem', { lineHeight: '125%', letterSpacing: '-0.03em' }],
+        'descriptor-lg': ['2.25rem', { lineHeight: '110%', letterSpacing: '-0.03em' }],
       },
       gridTemplateColumns: ({ theme }) => {
         const spacing = theme('spacing');

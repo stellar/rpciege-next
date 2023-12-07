@@ -2,17 +2,13 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import Link from 'next/link';
 
+import { Banner } from '@/features/landing';
 import { CardSleeve } from '@/components/CardSleeve';
-
-import pamphlet1 from '@/assets/marketing/pamphlet-1.png';
-import pamphlet1Lg from '@/assets/marketing/pamphlet-1-lg.png';
+import { Pamphlet } from '@/components/Pamphlet';
 
 import cardFrame from '@/assets/marketing/card-frame.png';
 import cardFrameLg from '@/assets/marketing/card-frame-lg.png';
 import discordCard from '@/assets/marketing/discord-card.png';
-
-import pamphlet2 from '@/assets/marketing/pamphlet-2.png';
-import pamphlet2Lg from '@/assets/marketing/pamphlet-2-lg.png';
 
 import communityBg from '@/assets/marketing/community-bg.png';
 import communityBgLg from '@/assets/marketing/community-bg-lg.png';
@@ -22,8 +18,6 @@ import twitterCard from '@/assets/marketing/twitter-card.png';
 import blogCard from '@/assets/marketing/blog-card.png';
 
 import fca00cTv from '@/assets/marketing/fca00c-tv.png';
-
-import { Banner } from '@/features/landing';
 
 export default function Home() {
   return (
@@ -41,29 +35,13 @@ export default function Home() {
 
 const ShapeTheFuture = () => {
   return (
-    <div className="mt-8 relative text-body-lg max-w-max mx-auto isolate -z-10">
-      <Image
-        src={pamphlet1}
-        alt=""
-        className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%-8px)] sm:hidden"
-        style={{ height: pamphlet1.height }}
-        aria-hidden="true"
-      />
-
-      <Image
-        src={pamphlet1Lg}
-        alt=""
-        className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%-20px)] hidden sm:block"
-        style={{ height: pamphlet1Lg.height }}
-        aria-hidden="true"
-      />
-
-      <div className="pamphlet-content flex flex-col pt-8 pl-10 sm:pt-14 sm:px-5 md:px-10 lg:px-20">
-        <h3>Shape the future!</h3>
+    <Pamphlet className="mt-8 -rotate-2">
+      <Pamphlet.Content className="flex flex-col">
+        <Pamphlet.Title>Shape the future!</Pamphlet.Title>
 
         <div
           className={clsx(
-            'grid mt-[72px] max-w-[290px] gap-10',
+            'grid mt-[72px] max-w-[290px] gap-10 text-body-lg',
             'sm:mt-[101px] sm:max-w-[1000px] sm:grid-cols-2 sm:flex-1'
           )}
         >
@@ -97,8 +75,8 @@ const ShapeTheFuture = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Pamphlet.Content>
+    </Pamphlet>
   );
 };
 
@@ -116,17 +94,10 @@ const GatherYourArmy = () => {
           src={cardFrame}
           alt=""
           aria-hidden="true"
-          className="object-cover [object-position:calc(50%+10px)] md:hidden"
-          style={{ height: cardFrame.height }}
+          className="md:hidden translate-x-2.5 max-w-none"
         />
 
-        <Image
-          src={cardFrameLg}
-          alt=""
-          aria-hidden="true"
-          className="object-cover hidden md:block"
-          style={{ height: cardFrameLg.height }}
-        />
+        <Image src={cardFrameLg} alt="" aria-hidden="true" className="hidden md:block max-w-none" />
 
         <div className="absolute inset-0 top-64 max-w-[291px] md:top-[700px] md:max-w-[690px] px-2 mx-auto text-center">
           <p className="md:text-body-lg">
@@ -139,6 +110,7 @@ const GatherYourArmy = () => {
             <Link href="/" className="button button-primary">
               Play RPCiege
             </Link>
+
             <Link href="/" className="button button-primary">
               Claim Cards
             </Link>
@@ -196,28 +168,12 @@ const leaderboard = [
 
 const PrepareForTheSiege = () => {
   return (
-    <div className="relative">
-      <Image
-        src={pamphlet2}
-        alt=""
-        className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%+8px)] sm:hidden"
-        style={{ height: pamphlet2.height }}
-        aria-hidden="true"
-      />
+    <Pamphlet className="z-10 rotate-3">
+      <Pamphlet.Content>
+        <Pamphlet.Title>Prepare for the siege!</Pamphlet.Title>
 
-      <Image
-        src={pamphlet2Lg}
-        alt=""
-        className="relative object-cover min-w-max pointer-events-none left-1/2 translate-x-[calc(-50%+4px)] hidden sm:block"
-        style={{ height: pamphlet2Lg.height }}
-        aria-hidden="true"
-      />
-
-      <div className={clsx('pamphlet-content-clockwise pt-6 pl-2', 'sm:pt-11 sm:px-7')}>
-        <h3>Prepare for the siege!</h3>
-
-        <div className="mt-32 flex flex-wrap gap-x-12 gap-y-4 max-w-4xl">
-          <table className="flex-1 pamphlet-table">
+        <div className="mt-24 flex flex-wrap gap-x-12 gap-y-4 max-w-4xl">
+          <table className="flex-1 table-pamphlet">
             <thead>
               <tr>
                 <th>#</th>
@@ -246,27 +202,25 @@ const PrepareForTheSiege = () => {
             games and claiming the top spot in the corresponding leaderboard.
           </p>
         </div>
-      </div>
-    </div>
+      </Pamphlet.Content>
+    </Pamphlet>
   );
 };
 
 const Community = () => {
   return (
-    <div className="mt-12 sm:-mt-56 relative flex justify-center">
+    <div className="mt-12 sm:-mt-56 relative flex flex-col items-center">
       <Image
         src={communityBg}
         alt=""
-        style={{ height: communityBg.height }}
-        className="object-cover mx-auto drop-shadow-[0px_0px_20px_#000] pointer-events-none absolute sm:hidden -z-10"
+        className="drop-shadow-[0px_0px_20px_#000] pointer-events-none absolute sm:hidden max-w-none"
         aria-hidden="true"
       />
 
       <Image
         src={communityBgLg}
         alt=""
-        style={{ height: communityBgLg.height }}
-        className="object-cover mx-auto drop-shadow-[0px_0px_20px_#000] pointer-events-none hidden sm:block -z-10"
+        className="drop-shadow-[0px_0px_20px_#000] pointer-events-none hidden sm:block max-w-none"
         aria-hidden="true"
       />
 
@@ -311,7 +265,7 @@ const Fca00c = () => {
       <Image
         src={fca00cTv}
         alt=""
-        className="mx-auto object-cover pointer-events-none -z-10 w-auto h-[500px] -mt-12 sm:h-[1000px] sm:-mt-40"
+        className="mx-auto object-cover pointer-events-none h-[500px] -mt-12 sm:h-[1000px] sm:-mt-40"
         aria-hidden="true"
       />
     </div>
