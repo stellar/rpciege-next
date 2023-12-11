@@ -1,8 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
-import Link from 'next/link';
 
 import styles from './styles.module.css';
+
+import { Link } from '@/components/Link';
 
 export const Footer = (props: any) => {
   return (
@@ -10,6 +11,7 @@ export const Footer = (props: any) => {
       {...props}
       className={clsx(
         'flex flex-col items-center justify-between lg:flex-row gap-6 pb-7 px-6 leading-[18px]',
+        styles.Footer,
         props.className
       )}
     >

@@ -16,7 +16,7 @@ export const Banner = () => {
 
       <Link href="/" className="absolute left-1/2 -translate-x-1/2 min-w-max bottom-[30%]">
         <CardSleeve>
-          <div className="button button-secondary">Get Started</div>
+          <div className="btn btn-secondary">Get Started</div>
         </CardSleeve>
       </Link>
     </div>

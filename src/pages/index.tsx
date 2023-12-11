@@ -6,6 +6,8 @@ import { Banner } from '@/features/landing';
 import { CardSleeve } from '@/components/CardSleeve';
 import { Pamphlet } from '@/components/Pamphlet';
 
+import horrorPack from '@/assets/marketing/horror-pack.png';
+
 import cardFrame from '@/assets/marketing/card-frame.png';
 import cardFrameLg from '@/assets/marketing/card-frame-lg.png';
 import discordCard from '@/assets/marketing/discord-card.png';
@@ -35,7 +37,7 @@ export default function Home() {
 
 const ShapeTheFuture = () => {
   return (
-    <Pamphlet className="mt-8 -rotate-2">
+    <Pamphlet className="relative mt-8 -rotate-2">
       <Pamphlet.Content className="flex flex-col">
         <Pamphlet.Title>Shape the future!</Pamphlet.Title>
 
@@ -76,13 +78,19 @@ const ShapeTheFuture = () => {
           </div>
         </div>
       </Pamphlet.Content>
+
+      <Image
+        src={horrorPack}
+        alt=""
+        className="absolute right-1/2 bottom-[-20%] w-[230px] sm:w-auto sm:right-[calc(50%+16rem)] rotate-[-70deg]"
+      />
     </Pamphlet>
   );
 };
 
 const GatherYourArmy = () => {
   return (
-    <div className="mt-20 flex flex-col items-center gap-4">
+    <div className="mt-72 sm:mt-56 flex flex-col items-center gap-4">
       <h2 className="text-[0.35rem] sm:text-[0.6rem] lg:text-[1rem] leading-none text-center">
         <span className="text-[11em] block mr-[0.5em]">Gather</span>
         <span className="text-[8.77em] italic align-top leading-[0.75]">Your</span>
@@ -107,11 +115,11 @@ const GatherYourArmy = () => {
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-7 mt-12 md:mt-15">
-            <Link href="/" className="button button-primary">
+            <Link href="/" className="btn btn-primary">
               Play RPCiege
             </Link>
 
-            <Link href="/" className="button button-primary">
+            <Link href="/" className="btn btn-primary">
               Claim Cards
             </Link>
           </div>

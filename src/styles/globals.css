@@ -73,4 +73,8 @@
   body {
     @apply font-merriweather text-body text-neutral-gray bg-neutral-white;
   }
+
+  a {
+    @apply text-primary-red;
+  }
 }

@@ -33,7 +33,8 @@ export const Navbar = () => {
   );
 };
 
-const menuLinkStyle = 'flex gap-2 items-center text-center uppercase font-nanum font-bold px-11';
+const menuLinkStyle =
+  'flex gap-2 items-center text-center uppercase font-nanum font-bold px-11 text-neutral-gray';
 
 const DesktopMenu = () => {
   return (

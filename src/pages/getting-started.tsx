@@ -1,5 +1,8 @@
 import Image from 'next/image';
 
+import { links, routes } from '@/constants';
+
+import { Link } from '@/components/Link';
 import { RulesCard } from '@/features/getting-started';
 import { CardSleeve } from '@/components/CardSleeve';
 import { Pamphlet } from '@/components/Pamphlet';
@@ -21,6 +24,9 @@ import horrorPack from '@/assets/marketing/horror-pack.png';
 
 import sorobanKnights from '@/assets/marketing/soroban-knights.png';
 
+import siegePeople from '@/assets/marketing/siege-people.png';
+import siegePeopleLg from '@/assets/marketing/siege-people-lg.png';
+
 export default function GettingStarted() {
   return (
     <main className="overflow-hidden">
@@ -30,6 +36,8 @@ export default function GettingStarted() {
       <Preparation />
       <CollectingCards />
       <Soroban />
+      <StellarNetwork />
+      <DiveIn />
     </main>
   );
 }
@@ -97,14 +105,19 @@ const Rules = () => {
 
           <p>
             Learn about upcoming sieges by keeping an eye out for announcements in the coding games
-            channels in the Stellar Developer Discord or by following Soroban on Twitter.
+            channels in the <Link href={links.DISCORD}>Stellar Developer Discord</Link> or by
+            following
+            <Link href={links.TWITTER}>Soroban on Twitter</Link>.
           </p>
         </RulesCard>
 
         <RulesCard number={2}>
           <Image src={rulesBooklet} alt="" className="h-40 object-contain" />
 
-          <p>New siege instructions will be added to the RPCiege booklet as they are released.</p>
+          <p>
+            New siege instructions will be added to the{' '}
+            <Link href={links.RPCIEGE_BOOKLET}>RPCiege booklet</Link> as they are released.
+          </p>
         </RulesCard>
 
         <RulesCard number={3}>
@@ -112,7 +125,11 @@ const Rules = () => {
 
           <p>
             Follow the booklet’s instructions carefully to complete each skirmish, receive NFT
-            playing card(s), and earn your spot on the RPCiege leaderboard.
+            playing card(s), and earn your spot on the{' '}
+            <Link href="https://rpciege.com/leaderboard?field=timestamp&skirmish=1">
+              RPCiege leaderboard
+            </Link>
+            .
           </p>
         </RulesCard>
       </div>
@@ -196,7 +213,7 @@ const Preparation = () => {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative pointer-events-none">
         <Image
           src={preparation}
           alt=""
@@ -233,14 +250,15 @@ const CollectingCards = () => {
         </div>
 
         <p className="max-w-[40rem] text-h5 mt-7 lg:mt-10 font-capitolina">
-          Read more about the characters and lore on our{' '}
-          <a className="text-primary-red">World page</a>.
+          Read more about the characters and lore on our <Link href="/">World page</Link>.
         </p>
       </div>
 
       <RulesCard className="mt-7 lg:mt-9 text-body-lg lg:text-h5 text-center lg:font-capitolina px-7.5 py-10 lg:px-16 lg:py-11">
-        You can claim your NFT cards wherever you wish. However, we’ve built a simple claim page
-        over at rpciege.com/claim to aid in the claiming process.
+        <div>
+          You can claim your NFT cards wherever you wish. However, we’ve built a simple claim page
+          over at <Link href={routes.CLAIM}>rpciege.com/claim</Link> to aid in the claiming process.
+        </div>
       </RulesCard>
 
       <div className="absolute left-[calc(50%+22rem)] -top-28">
@@ -264,7 +282,7 @@ const CollectingCards = () => {
 
 const Soroban = () => {
   return (
-    <Pamphlet className="mt-20 sm:mt-32 -rotate-2 text-body-lg">
+    <Pamphlet className="mt-20 sm:mt-32 -rotate-2 text-body-lg z-10">
       <Pamphlet.Content>
         <Pamphlet.Title>Soroban</Pamphlet.Title>
 
@@ -272,14 +290,17 @@ const Soroban = () => {
           <div className="max-w-[31rem] basis-9/12">
             <p>
               And, of course, it would be neglectful to not talk about the backbone of RPCiege, the
-              Soroban smart contracts platform, which is designed to work alongside and integrate
-              with the Stellar blockchain. Soroban smart contracts are written in Rust and compiled
-              into Wasm for deployment.
+              <Link href={links.SOROBAN}>Soroban smart contracts platform</Link>, which is designed
+              to work alongside and integrate with the Stellar blockchain. Soroban smart contracts
+              are written in Rust and compiled into Wasm for deployment.
             </p>
 
             <p className="mt-5 md:text-h5 md:font-capitolina">
-              If you’re new to Soroban and want to get your feet wet before diving into RPCiege, the
-              Getting Started section in the Soroban docs is a great place to begin your journey.
+              If you’re new to Soroban and want to get your feet wet before diving into RPCiege, the{' '}
+              <Link href={'https://soroban.stellar.org/docs/category/getting-started'}>
+                Getting Started section
+              </Link>{' '}
+              in the Soroban docs is a great place to begin your journey.
             </p>
           </div>
 
@@ -287,5 +308,57 @@ const Soroban = () => {
         </div>
       </Pamphlet.Content>
     </Pamphlet>
+  );
+};
+
+const StellarNetwork = () => {
+  return (
+    <div className="relative flex flex-col items-center justify-center mt-28 sm:-mt-36">
+      <Image src={siegePeople} alt="" className="pointer-events-none sm:hidden min-w-max" />
+
+      <Image
+        src={siegePeopleLg}
+        alt=""
+        className="pointer-events-none hidden sm:block max-w-none"
+      />
+
+      <div className="absolute flex flex-col items-center px-4 sm:mt-32">
+        <h2 className="text-[1rem] sm:text-[2rem] lg:text-[3rem] xl:text-[4rem] leading-none">
+          <span className="text-[2em] mr-[0.15em] italic">The</span>
+          <span className="text-[2.8em]">Stellar</span>
+          <span className="text-[2.8em] font-extrabold uppercase block ml-[1.6em]">Network</span>
+        </h2>
+
+        <p className="mt-2.5 text-neutral-white max-w-xs text-center sm:max-w-[54rem] lg:text-h5 lg:font-capitolina">
+          The Stellar network is a layer-1, open-source, decentralized blockchain network that
+          provides the framework for developers to create applications, issue assets, and more. With
+          the addition of Soroban, the Stellar network now supports smart contracts on Futurenet and
+          Testnet!
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const DiveIn = () => {
+  return (
+    <div className="mt-28 mb-28 sm:mb-44 px-4 flex flex-col items-center text-center max-w-3xl mx-auto">
+      <h3>Ready to dive in?</h3>
+
+      <p className="mt-2 sm:mt-5">
+        Step forth into the world of RPCiege, where coding challenges await. Harness the power of
+        smart contract development on Soroban and fight for everlasting peace!
+      </p>
+
+      <div className="mt-7 sm:mt-5 flex gap-4">
+        <Link href="/" className="btn btn-primary">
+          Play RPCiege
+        </Link>
+
+        <Link href="/" className="btn btn-primary">
+          Claim Cards
+        </Link>
+      </div>
+    </div>
   );
 };
