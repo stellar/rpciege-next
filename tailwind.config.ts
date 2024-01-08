@@ -40,7 +40,7 @@ const config: Config = {
         h2: ['7rem', { lineHeight: '100%', letterSpacing: '-0.03em' }],
         h1: ['3.75rem', { fontWeight: '300', lineHeight: '100%', letterSpacing: '-0.03em' }],
         'h1-lg': ['7.8125rem', { fontWeight: '300', lineHeight: '100%', letterSpacing: '-0.03em' }],
-        'h1-bold': ['3.75rem', { fontWeight: '800', lineHeight: '100%' }],
+        'h1-bold': ['4.375rem', { fontWeight: '800', lineHeight: '100%' }],
         'h1-bold-lg': ['7.8125rem', { fontWeight: '800', lineHeight: '100%' }],
         body: ['1rem', { lineHeight: '175%' }],
         'body-lg': ['1.125rem', { lineHeight: '175%' }],

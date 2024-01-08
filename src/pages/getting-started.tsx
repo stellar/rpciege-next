@@ -44,9 +44,9 @@ export default function GettingStarted() {
 
 const Banner = () => {
   return (
-    <div className="shadow-2xl pt-16 pb-2">
-      <div className="flex items-center justify-center gap-y-14 gap-x-7.5 px-2 flex-col lg:flex-row">
-        <div className="flex-1 max-w-[35rem]">
+    <div className="max-w-[1412px] mx-auto shadow-2xl pt-16 pb-2">
+      <div className="grid lg:grid-cols-[1fr_auto] place-items-center max-w-max mx-auto gap-y-14 gap-x-7.5 px-2">
+        <div className="max-w-[38rem]">
           <h1 className="italic">Introduction</h1>
 
           <p className="mt-4 first-line:text-h5 first-line:font-capitolina">
@@ -63,7 +63,7 @@ const Banner = () => {
           </p>
         </div>
 
-        <Image src={knight} alt="" className="shrink min-w-0" />
+        <Image src={knight} alt="" />
       </div>
 
       <div className="mt-14 lg:mt-24 lg:px-2">
@@ -314,7 +314,7 @@ const Soroban = () => {
 const StellarNetwork = () => {
   return (
     <div className="relative flex flex-col items-center justify-center mt-28 sm:-mt-36">
-      <Image src={siegePeople} alt="" className="pointer-events-none sm:hidden min-w-max" />
+      <Image src={siegePeople} alt="" className="pointer-events-none sm:hidden max-w-none" />
 
       <Image
         src={siegePeopleLg}

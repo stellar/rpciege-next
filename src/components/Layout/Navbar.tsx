@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Popover } from '@headlessui/react';
 
+import { routes } from '@/constants';
+
 import logo from '@/assets/logo.svg';
 import hamburger from '@/assets/icons/hamburger.svg';
 import helmet from '@/assets/icons/helmet.svg';
@@ -12,7 +14,7 @@ import { BulletinBoardDisclosure } from '@/components/BulletinBoard/BulletinBoar
 
 export const Navbar = () => {
   return (
-    <nav className="flex justify-between border-b border-neutral-gray h-14 lg:border lg:m-0.5">
+    <nav className="flex justify-between border-b border-neutral-gray h-14 lg:border lg:mx-0.5 lg:mt-0.5 relative">
       <Link href="/" className="px-3 flex items-center">
         <Image src={logo} alt="logo" className="w-[117.1px]" />
       </Link>
@@ -38,12 +40,12 @@ const menuLinkStyle =
 
 const DesktopMenu = () => {
   return (
-    <div className="relative hidden lg:flex divide-x divide-neutral-gray border-x border-neutral-gray">
-      <Link href="/" className={menuLinkStyle}>
+    <div className="hidden lg:flex divide-x divide-neutral-gray border-x border-neutral-gray">
+      <Link href={routes.GETTING_STARTED} className={menuLinkStyle}>
         Get Started
       </Link>
 
-      <Link href="/" className={menuLinkStyle}>
+      <Link href={routes.CODEX} className={menuLinkStyle}>
         Codex
       </Link>
 

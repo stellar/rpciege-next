@@ -4,7 +4,6 @@ import localFont from 'next/font/local';
 import { Merriweather } from 'next/font/google';
 
 import { BaseLayout } from '@/components/Layout/BaseLayout';
-import Head from 'next/head';
 
 const nanumGothicCoding = localFont({
   src: [

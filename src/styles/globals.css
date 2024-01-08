@@ -21,6 +21,16 @@
     );
     background-size: 14.5px 14.5px;
   }
+
+  .bg-checkerboard-red {
+    background: repeating-conic-gradient(
+      #e94f2d 0% 25%,
+      transparent 0% 50%,
+      #e94f2d 0% 75%,
+      transparent 0% 100%
+    );
+    background-size: 14.5px 14.5px;
+  }
 }
 
 @layer components {

@@ -4,7 +4,9 @@ import clsx from 'clsx';
 
 import caret from '@/assets/icons/caret.svg';
 
-type BulletinBoardDropdownProps = React.ComponentPropsWithoutRef<typeof Popover.Button>;
+type BulletinBoardDropdownProps = React.ComponentPropsWithoutRef<typeof Popover.Button> & {
+  children?: React.ReactNode;
+};
 
 export const BulletinBoardDropdown = ({
   className,
@@ -24,8 +26,9 @@ export const BulletinBoardDropdown = ({
             />
           </Popover.Button>
 
-          <Popover.Panel className="absolute -inset-x-[1px] top-[calc(100%+1px)] p-5 space-y-4 border-x border-b border-neutral-gray bg-neutral-white shadow-2xl z-10">
-            {children}
+          <Popover.Panel className="absolute inset-x-0 top-[calc(100%+1px)] bg-neutral-white shadow-2xl z-10">
+            <div className="p-7.5 flex gap-5 *:basis-96 *:shrink-0 overflow-x-auto">{children}</div>
+            <div className="bg-checkerboard-red h-[14.5px]" />
           </Popover.Panel>
         </>
       )}
