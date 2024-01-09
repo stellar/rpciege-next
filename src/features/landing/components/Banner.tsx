@@ -36,15 +36,15 @@ const BannerBackground = () => {
       <Image
         src={bannerLg}
         alt=""
-        className="pointer-events-none drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)] hidden sm:block"
+        className="pointer-events-none drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)] max-sm:hidden"
         aria-hidden="true"
       />
 
-      <CardSleeve className="absolute rotate-12 bottom-0 left-0 hidden sm:block">
+      <CardSleeve className="absolute rotate-12 bottom-0 left-0 max-sm:hidden">
         <Image src={vikingRaider} alt="" className="drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)]" />
       </CardSleeve>
 
-      <CardSleeve className="absolute -rotate-12 -bottom-64 right-10 hidden sm:block">
+      <CardSleeve className="absolute -rotate-12 -bottom-64 right-10 max-sm:hidden">
         <Image src={orbitalCannon} alt="" className="drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)]" />
       </CardSleeve>
     </div>

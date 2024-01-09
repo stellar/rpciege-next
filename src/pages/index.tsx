@@ -82,7 +82,7 @@ const ShapeTheFuture = () => {
       <Image
         src={horrorPack}
         alt=""
-        className="absolute right-1/2 bottom-[-20%] w-[230px] sm:w-auto sm:right-[calc(50%+16rem)] rotate-[-70deg]"
+        className="absolute right-1/2 bottom-[-20%] max-sm:w-[230px] sm:mr-64 rotate-[-70deg]"
       />
     </Pamphlet>
   );
@@ -221,19 +221,19 @@ const Community = () => {
       <Image
         src={communityBg}
         alt=""
-        className="drop-shadow-[0px_0px_20px_#000] pointer-events-none absolute sm:hidden max-w-none"
+        className="drop-shadow-[0px_0px_20px_#000] pointer-events-none absolute sm:hidden max-w-none -z-10"
         aria-hidden="true"
       />
 
       <Image
         src={communityBgLg}
         alt=""
-        className="drop-shadow-[0px_0px_20px_#000] pointer-events-none hidden sm:block max-w-none"
+        className="drop-shadow-[0px_0px_20px_#000] pointer-events-none max-sm:hidden max-w-none"
         aria-hidden="true"
       />
 
       <div className="pt-20 sm:absolute sm:pt-72">
-        <p className="text-neutral-white font-capitolina text-4xl font-extrabold text-center max-w-xs sm:max-w-none">
+        <p className="text-neutral-white font-capitolina text-4xl font-extrabold text-center max-sm:max-w-xs">
           Don’t worry, your allies are always by your side!
         </p>
 

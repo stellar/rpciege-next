@@ -40,9 +40,7 @@ const ClaimBanner = () => {
             Grow your deck stronger with the cards you’ve earned through your most recent siege.
           </p>
 
-          <button className="mt-10 md:mt-20 btn btn-primary w-full sm:w-auto">
-            Connect Wallet
-          </button>
+          <button className="mt-10 md:mt-20 btn btn-primary max-sm:w-full">Connect Wallet</button>
         </div>
       </div>
     </div>

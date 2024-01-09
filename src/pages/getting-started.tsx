@@ -16,6 +16,10 @@ import rulesLeaderboard from '@/assets/marketing/rules-leaderboard.png';
 import orbitalCannon from '@/assets/marketing/orbital-cannon.png';
 import vikingRaider from '@/assets/marketing/viking-raider.png';
 
+import yellowD12 from '@/assets/dice/yellow-d12.png';
+import redD10 from '@/assets/dice/red-d10.png';
+import redD20 from '@/assets/dice/red-d20.png';
+
 import preparation from '@/assets/marketing/preparation.png';
 
 import equipment from '@/assets/marketing/equipment.png';
@@ -78,13 +82,34 @@ const Banner = () => {
 const Rules = () => {
   return (
     <div className="relative px-4 pt-60 lg:pt-32">
-      <CardSleeve className="absolute top-20 right-[calc(50%+10rem)] lg:top-64 lg:right-[calc(50%+35rem)] rotate-[24deg] w-[218px] lg:w-max">
-        <Image src={orbitalCannon} alt="" />
-      </CardSleeve>
+      <div className="absolute top-24 lg:top-64 right-1/2 mr-[200px] lg:mr-[576px]">
+        <CardSleeve className="rotate-[24deg]">
+          <Image src={orbitalCannon} alt="" className="max-lg:w-[218px] max-w-none" />
+        </CardSleeve>
 
-      <CardSleeve className="absolute top-0 left-[calc(50%+10rem)] lg:left-[calc(50%+35rem)] -rotate-45 w-[218px] lg:w-max">
-        <Image src={vikingRaider} alt="" />
-      </CardSleeve>
+        <Image
+          src={yellowD12}
+          alt=""
+          className="absolute w-[35%] -top-[5%] -right-[20%] pointer-events-none"
+        />
+        <Image
+          src={redD10}
+          alt=""
+          className="absolute w-[35%] -top-[15%] -right-[60%] pointer-events-none"
+        />
+      </div>
+
+      <div className="absolute top-0 left-1/2 ml-[160px] lg:ml-[576px]">
+        <CardSleeve className="-rotate-45">
+          <Image src={vikingRaider} alt="" className="max-lg:w-[218px] max-w-none" />
+        </CardSleeve>
+
+        <Image
+          src={redD20}
+          alt=""
+          className="absolute w-[40%] top-1/2 -left-[10%] pointer-events-none"
+        />
+      </div>
 
       <div className="max-w-md lg:max-w-[55rem] mx-auto">
         <h2 className="text-[0.4rem] sm:text-[0.6rem] lg:text-[1rem] text-center">
@@ -261,53 +286,57 @@ const CollectingCards = () => {
         </div>
       </RulesCard>
 
-      <div className="absolute left-[calc(50%+22rem)] -top-28">
-        <CardSleeve className="absolute rotate-[30deg] w-max ml-28 mt-28">
-          <Image src={vikingRaider} alt="" />
+      <div className="absolute left-1/2 ml-80 -top-28">
+        <CardSleeve className="absolute rotate-[30deg] ml-28 mt-28">
+          <Image src={vikingRaider} alt="" className="max-w-none" />
         </CardSleeve>
 
-        <CardSleeve className="absolute rotate-[15deg] w-max">
-          <Image src={orbitalCannon} alt="" />
+        <CardSleeve className="absolute rotate-[15deg]">
+          <Image src={orbitalCannon} alt="" className="max-w-none" />
         </CardSleeve>
       </div>
-
-      <Image
-        src={horrorPack}
-        alt=""
-        className="absolute w-[200px] top-[90%] -left-20 sm:w-max sm:top-[85%] sm:-left-48 rotate-[-20deg]"
-      />
     </div>
   );
 };
 
 const Soroban = () => {
   return (
-    <Pamphlet className="mt-20 sm:mt-32 -rotate-2 text-body-lg z-10">
-      <Pamphlet.Content>
-        <Pamphlet.Title>Soroban</Pamphlet.Title>
+    <div className="relative mt-32">
+      <Image
+        src={horrorPack}
+        alt=""
+        className="absolute right-1/2 max-sm:w-[200px] mr-12 sm:mr-96 -translate-y-1/2 -rotate-[20deg]"
+      />
 
-        <div className="mt-20 sm:flex items-center gap-x-16">
-          <div className="max-w-[31rem] basis-9/12">
-            <p>
-              And, of course, it would be neglectful to not talk about the backbone of RPCiege, the
-              <Link href={links.SOROBAN}>Soroban smart contracts platform</Link>, which is designed
-              to work alongside and integrate with the Stellar blockchain. Soroban smart contracts
-              are written in Rust and compiled into Wasm for deployment.
-            </p>
+      <Pamphlet className="-rotate-2 text-body-lg z-10">
+        <Pamphlet.Content>
+          <Pamphlet.Title>Soroban</Pamphlet.Title>
 
-            <p className="mt-5 md:text-h5 md:font-capitolina">
-              If you’re new to Soroban and want to get your feet wet before diving into RPCiege, the{' '}
-              <Link href={'https://soroban.stellar.org/docs/category/getting-started'}>
-                Getting Started section
-              </Link>{' '}
-              in the Soroban docs is a great place to begin your journey.
-            </p>
+          <div className="mt-20 sm:flex items-center gap-x-16">
+            <div className="max-w-[31rem] basis-9/12">
+              <p>
+                And, of course, it would be neglectful to not talk about the backbone of RPCiege,
+                the
+                <Link href={links.SOROBAN}>Soroban smart contracts platform</Link>, which is
+                designed to work alongside and integrate with the Stellar blockchain. Soroban smart
+                contracts are written in Rust and compiled into Wasm for deployment.
+              </p>
+
+              <p className="mt-5 md:text-h5 md:font-capitolina">
+                If you’re new to Soroban and want to get your feet wet before diving into RPCiege,
+                the{' '}
+                <Link href={'https://soroban.stellar.org/docs/category/getting-started'}>
+                  Getting Started section
+                </Link>{' '}
+                in the Soroban docs is a great place to begin your journey.
+              </p>
+            </div>
+
+            <Image src={sorobanKnights} alt="" className="min-w-0" />
           </div>
-
-          <Image src={sorobanKnights} alt="" className="min-w-0" />
-        </div>
-      </Pamphlet.Content>
-    </Pamphlet>
+        </Pamphlet.Content>
+      </Pamphlet>
+    </div>
   );
 };
 
