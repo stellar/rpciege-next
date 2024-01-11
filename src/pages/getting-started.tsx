@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { links, routes } from '@/constants';
 
 import { Link } from '@/components/Link';
-import { RulesCard } from '@/features/getting-started';
+import { RulesCard } from '@/components/RulesCard';
 import { CardSleeve } from '@/components/CardSleeve';
 import { Pamphlet } from '@/components/Pamphlet';
 
