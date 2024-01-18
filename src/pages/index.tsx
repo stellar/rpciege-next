@@ -9,7 +9,6 @@ import { Pamphlet } from '@/components/Pamphlet';
 import horrorPack from '@/assets/marketing/horror-pack.png';
 
 import cardFrame from '@/assets/marketing/card-frame.png';
-import cardFrameLg from '@/assets/marketing/card-frame-lg.png';
 import discordCard from '@/assets/marketing/discord-card.png';
 
 import communityBg from '@/assets/marketing/community-bg.png';
@@ -90,24 +89,23 @@ const ShapeTheFuture = () => {
 
 const GatherYourArmy = () => {
   return (
-    <div className="mt-72 sm:mt-56 flex flex-col items-center gap-4">
+    <div className="mt-72 sm:mt-56 flex flex-col items-center">
       <h2 className="text-[0.35rem] sm:text-[0.6rem] lg:text-[1rem] leading-none text-center">
         <span className="text-[11em] block mr-[0.5em]">Gather</span>
         <span className="text-[8.77em] italic align-top leading-[0.75]">Your</span>
         <span className="text-[12.93em] font-extrabold uppercase">Army</span>
       </h2>
 
-      <div className="relative flex flex-col items-center">
-        <Image
-          src={cardFrame}
-          alt=""
-          aria-hidden="true"
-          className="md:hidden translate-x-2.5 max-w-none"
-        />
+      <Image
+        src={cardFrame}
+        alt=""
+        className="mt-4 translate-x-[3.5%] max-w-none max-md:w-[26rem] -mb-32 md:-mb-[28rem] pointer-events-none"
+      />
 
-        <Image src={cardFrameLg} alt="" aria-hidden="true" className="hidden md:block max-w-none" />
+      <div className="relative">
+        <div className="absolute inset-y-0 -inset-x-6 md:-inset-x-64 border-decoration border-[3.25rem] md:border-[6.25rem] -z-10" />
 
-        <div className="absolute inset-0 top-64 max-w-[291px] md:top-[700px] md:max-w-[690px] px-2 mx-auto text-center">
+        <div className="max-w-[291px] md:max-w-[690px] mx-auto text-center px-2 pt-28 pb-20 md:pt-[28rem] md:pb-32">
           <p className="md:text-body-lg">
             In the realm of RPCiege, every skirmish conquered is not just a victory but a badge of
             honor. Each challenge overcome earns the player an NFT playing card they can show off to

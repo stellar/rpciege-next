@@ -29,7 +29,6 @@ import horrorPack from '@/assets/marketing/horror-pack.png';
 import sorobanKnights from '@/assets/marketing/soroban-knights.png';
 
 import siegePeople from '@/assets/marketing/siege-people.png';
-import siegePeopleLg from '@/assets/marketing/siege-people-lg.png';
 
 export default function GettingStarted() {
   return (
@@ -342,16 +341,10 @@ const Soroban = () => {
 
 const StellarNetwork = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center mt-28 sm:-mt-36">
-      <Image src={siegePeople} alt="" className="pointer-events-none sm:hidden max-w-none" />
+    <div className="grid *:[grid-area:1/1] items-center justify-center mt-28 lg:-mt-24 xl:-mt-36 mx-2 rounded-3xl overflow-hidden">
+      <Image src={siegePeople} alt="" className="pointer-events-none object-cover min-h-[34rem]" />
 
-      <Image
-        src={siegePeopleLg}
-        alt=""
-        className="pointer-events-none hidden sm:block max-w-none"
-      />
-
-      <div className="absolute flex flex-col items-center px-4 sm:mt-32">
+      <div className="flex flex-col items-center px-4 lg:mt-10">
         <h2 className="text-[1rem] sm:text-[2rem] lg:text-[3rem] xl:text-[4rem] leading-none">
           <span className="text-[2em] mr-[0.15em] italic">The</span>
           <span className="text-[2.8em]">Stellar</span>
