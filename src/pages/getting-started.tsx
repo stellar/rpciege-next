@@ -13,8 +13,8 @@ import rulesHelmet from '@/assets/marketing/rules-helmet.png';
 import rulesBooklet from '@/assets/marketing/rules-booklet.png';
 import rulesLeaderboard from '@/assets/marketing/rules-leaderboard.png';
 
-import orbitalCannon from '@/assets/marketing/orbital-cannon.png';
-import vikingRaider from '@/assets/marketing/viking-raider.png';
+import orbitalCannon from '@/assets/cards/orbital-cannon.jpg';
+import vikingRaider from '@/assets/cards/viking-raider.jpg';
 
 import yellowD12 from '@/assets/dice/yellow-d12.png';
 import redD10 from '@/assets/dice/red-d10.png';
@@ -83,7 +83,11 @@ const Rules = () => {
     <div className="relative px-4 pt-60 lg:pt-32">
       <div className="absolute top-24 lg:top-64 right-1/2 mr-[200px] lg:mr-[576px]">
         <CardSleeve className="rotate-[24deg]">
-          <Image src={orbitalCannon} alt="" className="max-lg:w-[218px] max-w-none" />
+          <Image
+            src={orbitalCannon}
+            alt=""
+            className="w-[218px] lg:w-[291px] rounded-xl max-w-none"
+          />
         </CardSleeve>
 
         <Image
@@ -100,7 +104,11 @@ const Rules = () => {
 
       <div className="absolute top-0 left-1/2 ml-[160px] lg:ml-[576px]">
         <CardSleeve className="-rotate-45">
-          <Image src={vikingRaider} alt="" className="max-lg:w-[218px] max-w-none" />
+          <Image
+            src={vikingRaider}
+            alt=""
+            className="w-[218px] lg:w-[291px] rounded-xl max-w-none"
+          />
         </CardSleeve>
 
         <Image
@@ -287,11 +295,11 @@ const CollectingCards = () => {
 
       <div className="absolute left-1/2 ml-80 -top-28">
         <CardSleeve className="absolute rotate-[30deg] ml-28 mt-28">
-          <Image src={vikingRaider} alt="" className="max-w-none" />
+          <Image src={vikingRaider} alt="" className="w-[291px] rounded-xl max-w-none" />
         </CardSleeve>
 
         <CardSleeve className="absolute rotate-[15deg]">
-          <Image src={orbitalCannon} alt="" className="max-w-none" />
+          <Image src={orbitalCannon} alt="" className="w-[291px] rounded-xl max-w-none" />
         </CardSleeve>
       </div>
     </div>

@@ -2,7 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 
 import { Link } from '@/components/Link';
-import { RulesCard } from '@/features/getting-started';
+import { RulesCard } from '@/components/RulesCard';
+import { Carousel } from '@/features/codex';
 
 import codexBg1 from '@/assets/marketing/codex-bg-1.png';
 import codexBg2 from '@/assets/marketing/codex-bg-2.png';
@@ -16,6 +17,7 @@ export default function Codex() {
     <main className="overflow-hidden">
       <Banner />
       <Collections />
+      <Characters />
       <DiveIn />
     </main>
   );
@@ -111,6 +113,24 @@ const Collections = () => {
           </RulesCard>
         </div>
       </div>
+    </div>
+  );
+};
+
+const Characters = () => {
+  return (
+    <div className="mt-28 md:mt-36 relative">
+      <div className="text-center flex flex-col items-center">
+        <h1 className="text-h1-bold lg:text-h1-bold-lg">Characters</h1>
+
+        <p className="text-body-lg max-w-[37.5rem] md:mt-10">
+          The realm of RPCiege is full of unique characters, both hero and villain, all with
+          colorful backstories. Here are some of the personas you may encounter as you embark upon
+          your own journey.
+        </p>
+      </div>
+
+      <Carousel className="mt-10" />
     </div>
   );
 };

@@ -67,7 +67,7 @@ const MobileMenu = () => {
         <Image src={hamburger} alt="menu" />
       </Popover.Button>
 
-      <Popover.Panel className="absolute inset-x-0 top-14 bg-neutral-white shadow-2xl divide-y divide-neutral-gray border-b border-neutral-gray z-10">
+      <Popover.Panel className="absolute inset-x-0 top-14 bg-neutral-white shadow-2xl divide-y divide-neutral-gray border-b border-neutral-gray z-50">
         <Link href="/" className={dropdownLinkStyles}>
           Get Started
         </Link>

@@ -26,7 +26,7 @@ export const BulletinBoardDropdown = ({
             />
           </Popover.Button>
 
-          <Popover.Panel className="absolute inset-x-0 top-[calc(100%+1px)] bg-neutral-white shadow-2xl z-20">
+          <Popover.Panel className="absolute inset-x-0 top-[calc(100%+1px)] bg-neutral-white shadow-2xl z-50">
             <div className="p-7.5 flex gap-5 *:basis-96 *:shrink-0 overflow-x-auto">{children}</div>
             <div className="bg-checkerboard-red h-[14.5px]" />
           </Popover.Panel>

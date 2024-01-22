@@ -6,8 +6,8 @@ import { CardSleeve } from '@/components/CardSleeve';
 import banner from '@/assets/marketing/banner.png';
 import bannerLg from '@/assets/marketing/banner-lg.png';
 
-import orbitalCannon from '@/assets/marketing/orbital-cannon.png';
-import vikingRaider from '@/assets/marketing/viking-raider.png';
+import orbitalCannon from '@/assets/cards/orbital-cannon.jpg';
+import vikingRaider from '@/assets/cards/viking-raider.jpg';
 
 export const Banner = () => {
   return (
@@ -16,7 +16,7 @@ export const Banner = () => {
 
       <Link href="/" className="absolute left-1/2 -translate-x-1/2 min-w-max bottom-[30%]">
         <CardSleeve>
-          <div className="btn btn-secondary">Get Started</div>
+          <div className="btn btn-secondary text-neutral-gray shadow-none">Get Started</div>
         </CardSleeve>
       </Link>
     </div>
@@ -41,11 +41,19 @@ const BannerBackground = () => {
       />
 
       <CardSleeve className="absolute rotate-12 bottom-0 left-0 max-sm:hidden">
-        <Image src={vikingRaider} alt="" className="drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)]" />
+        <Image
+          src={vikingRaider}
+          alt=""
+          className="drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)] w-[291px] rounded-xl"
+        />
       </CardSleeve>
 
       <CardSleeve className="absolute -rotate-12 -bottom-64 right-10 max-sm:hidden">
-        <Image src={orbitalCannon} alt="" className="drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)]" />
+        <Image
+          src={orbitalCannon}
+          alt=""
+          className="drop-shadow-[0px_0px_20px_rgba(0,0,0,0.5)] w-[291px] rounded-xl"
+        />
       </CardSleeve>
     </div>
   );

@@ -3,14 +3,13 @@ import Image from 'next/image';
 import { useCountdown } from '@/hooks/useCountdown';
 
 import { RulesCard } from '@/components/RulesCard';
+import { Link } from '@/components/Link';
 
 import siege5Bg1 from '@/assets/marketing/siege-5-bg-1.png';
 import siege5Bg2 from '@/assets/marketing/siege-5-bg-2.png';
 import horrorPack from '@/assets/marketing/horror-pack.png';
 import cardFrame from '@/assets/marketing/card-frame.png';
-
 import practiceBg from '@/assets/marketing/practice-bg.png';
-import { Link } from '@/components/Link';
 
 export default function Seige5() {
   return (
