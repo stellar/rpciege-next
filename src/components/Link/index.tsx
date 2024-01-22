@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import styles from './styles.module.css';
 
-type LinkProps = React.ComponentPropsWithoutRef<typeof NextLink>;
+export type LinkProps = React.ComponentPropsWithoutRef<typeof NextLink>;
 
 export const Link = (props: LinkProps) => {
   const isExternalLink =
