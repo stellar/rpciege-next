@@ -11,6 +11,9 @@ import theAnnihilator from '@/assets/cards/the-annihilator.jpg';
 
 import tableTop from '@/assets/marketing/table-top.png';
 import arrowRight from '@/assets/icons/arrow-right.svg';
+import redD10 from '@/assets/dice/red-d10.png';
+import redD20 from '@/assets/dice/red-d20.png';
+import yellowD12 from '@/assets/dice/yellow-d12.png';
 
 // TODO: Add full card data or fetch from external API.
 const cardData = [
@@ -72,7 +75,9 @@ export const Carousel = (props: CarouselProps) => {
   ];
 
   return (
-    <div className={clsx('grid *:[grid-area:1/1] justify-center px-2', props.className)}>
+    <div
+      className={clsx('relative grid *:[grid-area:1/1] justify-items-center px-2', props.className)}
+    >
       <Image
         src={tableTop}
         alt=""
@@ -134,6 +139,12 @@ export const Carousel = (props: CarouselProps) => {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="absolute -bottom-20 w-[34rem] sm:bottom-0 sm:w-[82rem] pointer-events-none">
+        <Image src={redD10} alt="" className="absolute bottom-10 left-10" />
+        <Image src={yellowD12} alt="" className="absolute -bottom-14 left-32" />
+        <Image src={redD20} alt="" className="absolute bottom-6 right-10" />
       </div>
     </div>
   );

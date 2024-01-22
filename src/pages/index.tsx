@@ -69,7 +69,7 @@ const ShapeTheFuture = () => {
             </div>
 
             <div>
-              <h5>Collect coveted playing cards</h5>
+              <h5>Collect coveted NFT playing cards</h5>
               <p className="mt-2.5">
                 Amass NFT playing cards dedicated to the feats of your fellow champions.
               </p>
@@ -108,8 +108,8 @@ const GatherYourArmy = () => {
         <div className="max-w-[291px] md:max-w-[690px] mx-auto text-center px-2 pt-28 pb-20 md:pt-[28rem] md:pb-32">
           <p className="md:text-body-lg">
             In the realm of RPCiege, every skirmish conquered is not just a victory but a badge of
-            honor. Each challenge overcome earns the player an NFT playing card they can show off to
-            display their impressive coding acumen.
+            honor. Each challenge completed earns the player an NFT playing card they can show off
+            to display their impressive coding acumen.
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-7 mt-12 md:mt-15">
@@ -203,9 +203,9 @@ const PrepareForTheSiege = () => {
 
           <p className="flex-1 basis-3/5 mt-4 first-line:text-h5 first-line:font-capitolina">
             <span className="drop-cap">B</span>race yourselves, adventurers! New sieges are released
-            periodically, where you will leverage Soroban, Stellar's smart contract platform, to
-            complete a set of skirmishes. Or put your mettle to the test by revisiting previous
-            games and claiming the top spot in the corresponding leaderboard.
+            periodically, where you will leverage Soroban, the Stellar network's smart contract
+            platform, to complete a set of skirmishes. Or put your mettle to the test by revisiting
+            previous games and claiming the top spot in the corresponding leaderboard.
           </p>
         </div>
       </Pamphlet.Content>

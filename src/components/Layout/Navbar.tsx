@@ -38,6 +38,14 @@ export const Navbar = () => {
 const menuLinkStyle =
   'flex gap-2 items-center text-center uppercase font-nanum font-bold px-11 text-neutral-gray';
 
+const bulletinItems = [
+  <BulletinBoardCard
+    date="December 31st"
+    title="Siege 5, Skirmishes 11-14: Space Continuum"
+    href="/siege-5"
+  />,
+];
+
 const DesktopMenu = () => {
   return (
     <div className="hidden lg:flex divide-x divide-neutral-gray border-x border-neutral-gray">
@@ -49,10 +57,7 @@ const DesktopMenu = () => {
         Codex
       </Link>
 
-      <BulletinBoardDropdown className={menuLinkStyle}>
-        <BulletinBoardCard date="October 31st" title="Halloween Special" />
-        <BulletinBoardCard date="October 31st" title="Halloween Special" />
-      </BulletinBoardDropdown>
+      <BulletinBoardDropdown className={menuLinkStyle}>{bulletinItems}</BulletinBoardDropdown>
     </div>
   );
 };
@@ -68,17 +73,16 @@ const MobileMenu = () => {
       </Popover.Button>
 
       <Popover.Panel className="absolute inset-x-0 top-14 bg-neutral-white shadow-2xl divide-y divide-neutral-gray border-b border-neutral-gray z-50">
-        <Link href="/" className={dropdownLinkStyles}>
+        <Link href={routes.GETTING_STARTED} className={dropdownLinkStyles}>
           Get Started
         </Link>
 
-        <Link href="/" className={dropdownLinkStyles}>
+        <Link href={routes.CODEX} className={dropdownLinkStyles}>
           Codex
         </Link>
 
         <BulletinBoardDisclosure className={dropdownLinkStyles}>
-          <BulletinBoardCard date="October 31st" title="Halloween Special" />
-          <BulletinBoardCard date="October 31st" title="Halloween Special" />
+          {bulletinItems}
         </BulletinBoardDisclosure>
 
         <div className={dropdownLinkStyles}>

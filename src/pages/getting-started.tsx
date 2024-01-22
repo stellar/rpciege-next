@@ -239,8 +239,9 @@ const Preparation = () => {
           <RulesCard>
             For each gameplay contract invocation, you’ll want to include as the function’s final
             argument the `Address` of your own Mainnet Stellar public key where you’d like to
-            receive your pack of commemorative NFT cards. We will issue NFTs as claimable balances
-            to this address only if it exists as a funded account on the `PUBLIC` network.
+            receive your pack of commemorative NFT playing cards. We will issue these NFT playing
+            cards as claimable balances to this address only if it exists as a funded account on the
+            `PUBLIC` network.
           </RulesCard>
         </div>
       </div>
@@ -271,8 +272,8 @@ const CollectingCards = () => {
         <div className="max-w-[35rem]">
           <p className="first-line:text-h5 first-line:font-capitolina">
             <span className="drop-cap">E</span>very siege has its own unique set of NFT playing
-            cards available for players to collect. And each skirmish overcome awards the player
-            between one and three cards from that siege’s expansion pack. 
+            cards available for players to collect. And each completed skirmish entitles the player
+            to receive between one and three cards from that siege's expansion pack.
           </p>
 
           <p className="mt-4">
@@ -288,8 +289,9 @@ const CollectingCards = () => {
 
       <RulesCard className="mt-7 lg:mt-9 text-body-lg lg:text-h5 text-center lg:font-capitolina px-7.5 py-10 lg:px-16 lg:py-11">
         <div>
-          You can claim your NFT cards wherever you wish. However, we’ve built a simple claim page
-          over at <Link href={routes.CLAIM}>rpciege.com/claim</Link> to aid in the claiming process.
+          You can claim your NFT playing cards using whatever method you'd like with any Stellar
+          network wallet. However, we’ve built a simple claim page over at{' '}
+          <Link href={routes.CLAIM}>rpciege.com/claim</Link> to aid in the claiming process.
         </div>
       </RulesCard>
 

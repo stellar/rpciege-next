@@ -137,7 +137,7 @@ const Characters = () => {
 
 const DiveIn = () => {
   return (
-    <div className="mt-28 mb-28 sm:mb-44 px-4 flex flex-col items-center text-center max-w-3xl mx-auto">
+    <div className="mt-72 sm:mt-28 mb-28 sm:mb-44 px-4 flex flex-col items-center text-center max-w-3xl mx-auto">
       <h3>Ready to dive in?</h3>
 
       <p className="mt-2 sm:mt-5">
