@@ -1,10 +1,8 @@
-import Image from 'next/image';
 import clsx from 'clsx';
 
-import styles from './styles.module.css';
+import paperTexture from '@/assets/paper-texture.png';
 
-import pamphlet from '@/assets/marketing/pamphlet.png';
-import pamphletLg from '@/assets/marketing/pamphlet-lg.png';
+import styles from './styles.module.css';
 
 type PamphletBaseProps = {
   className?: string;
@@ -13,22 +11,31 @@ type PamphletBaseProps = {
 
 export const PamphletBase = (props: PamphletBaseProps) => {
   return (
-    <div className={clsx('relative flex flex-col items-center', props.className)}>
-      <Image
-        src={pamphlet}
-        alt=""
-        className="pointer-events-none translate-x-4 sm:hidden max-w-none"
-        aria-hidden="true"
+    <div
+      className={clsx(
+        'relative max-w-[78rem] min-h-[50rem] mx-auto flex flex-col',
+        props.className
+      )}
+    >
+      <div className="absolute -top-2 bottom-3 left-0 -right-3 bg-neutral-white -rotate-[0.25deg] shadow-[0px_0px_8px_rgba(0,0,0,0.25)] -z-10" />
+      <div className="absolute -top-1 left-0 -right-1.5 bottom-2 bg-neutral-white shadow-[0px_0px_8px_rgba(0,0,0,0.25)] -z-10" />
+      <div
+        className={clsx(
+          'absolute inset-0 rotate-[0.25deg] bg-neutral-white shadow-[0px_8px_16px_rgba(0,0,0,0.5)] -z-10',
+          styles.PamphletPage
+        )}
       />
 
-      <Image
-        src={pamphletLg}
-        alt=""
-        className="pointer-events-none translate-x-2 hidden sm:block max-w-none"
-        aria-hidden="true"
+      <figure
+        className="absolute inset-0 pointer-events-none z-20"
+        style={{ backgroundImage: `url(${paperTexture.src})`, backgroundSize: '256px' }}
       />
 
       {props.children}
+
+      <div className="ml-auto mr-6 mb-6 mt-auto font-capitolina text-2xl font-bold rounded-full border-2 border-neutral-gray size-16 grid place-items-center">
+        2
+      </div>
     </div>
   );
 };
@@ -39,7 +46,18 @@ type PamphletTitleProps = {
 };
 
 const PamphletTitle = (props: PamphletTitleProps) => {
-  return <h3 {...props} className={clsx(styles.PamphletTitle, props.className)} />;
+  return (
+    <>
+      <h3
+        {...props}
+        className={clsx(
+          'flex items-center px-8 my-8 sm:px-12 max-w-6xl w-full self-center text-balance',
+          props.className
+        )}
+      />
+      <div className="bg-checkerboard-red h-[14.5px] sm:ml-10" />
+    </>
+  );
 };
 
 type PamphletContentProps = {
@@ -48,7 +66,12 @@ type PamphletContentProps = {
 };
 
 const PamphletContent = (props: PamphletContentProps) => {
-  return <div {...props} className={clsx(styles.PamphletContent, props.className)} />;
+  return (
+    <div
+      {...props}
+      className={clsx('px-8 my-16 sm:px-12 max-w-6xl w-full self-center', props.className)}
+    />
+  );
 };
 
 export const Pamphlet = Object.assign(PamphletBase, {

@@ -172,46 +172,44 @@ const Rules = () => {
 const Equipment = () => {
   return (
     <Pamphlet className="mt-24 -rotate-2 text-body-lg isolate">
-      <Pamphlet.Content>
-        <Pamphlet.Title>Equipment</Pamphlet.Title>
+      <Pamphlet.Title>Equipment</Pamphlet.Title>
 
-        <div className="mt-16 grid lg:grid-cols-2 gap-x-4 gap-y-10 max-w-2xl lg:max-w-none">
+      <Pamphlet.Content className="grid lg:grid-cols-2 gap-x-4 gap-y-4">
+        <div>
+          <p className="sm:text-h5 sm:font-capitolina">
+            Gather your allies, your weapons, your wits, for your fate in RPCiege depends on them!
+          </p>
+
+          <Image src={equipment} alt="" className="pointer-events-none max-lg:hidden" />
+        </div>
+
+        <div className="flex flex-col">
           <div>
-            <p className="sm:text-h5 sm:font-capitolina">
-              Gather your allies, your weapons, your wits, for your fate in RPCiege depends on them!
-            </p>
+            <h5>What you’ll need for success:</h5>
 
-            <Image src={equipment} alt="" className="pointer-events-none hidden lg:block" />
+            <ul className="list-disc ml-6">
+              <li>A computer. Even a tiny computer will do.</li>
+              <li>Your fingers, or whatever you use to type.</li>
+              <li>The ability to read.</li>
+              <li>An adventurous spirit and powerful smarts.</li>
+            </ul>
           </div>
 
-          <div className="flex flex-col">
-            <div>
-              <h5>What you’ll need for success:</h5>
+          <div className="mt-4 lg:my-auto">
+            <h5>But for real:</h5>
 
-              <ul className="list-disc ml-6">
-                <li>A computer. Even a tiny computer will do.</li>
-                <li>Your fingers, or whatever you use to type.</li>
-                <li>The ability to read.</li>
-                <li>An adventurous spirit and powerful smarts.</li>
-              </ul>
-            </div>
-
-            <div className="mt-4 lg:my-auto">
-              <h5>But for real:</h5>
-
-              <ul className="list-disc ml-6">
-                <li>A Rust toolchain</li>
-                <li>
-                  An editor that supports Rust: many editors support Rust, including Visual Studio
-                  Code.
-                </li>
-                <li>
-                  Soroban CLI: the command line interface to Soroban that allows you to build,
-                  deploy, and interact with smart contracts, configure identities, generate
-                  keypairs, manage networks, and more.
-                </li>
-              </ul>
-            </div>
+            <ul className="list-disc ml-6">
+              <li>A Rust toolchain</li>
+              <li>
+                An editor that supports Rust: many editors support Rust, including Visual Studio
+                Code.
+              </li>
+              <li>
+                Soroban CLI: the command line interface to Soroban that allows you to build, deploy,
+                and interact with smart contracts, configure identities, generate keypairs, manage
+                networks, and more.
+              </li>
+            </ul>
           </div>
         </div>
       </Pamphlet.Content>
@@ -318,31 +316,27 @@ const Soroban = () => {
       />
 
       <Pamphlet className="-rotate-2 text-body-lg z-10">
-        <Pamphlet.Content>
-          <Pamphlet.Title>Soroban</Pamphlet.Title>
+        <Pamphlet.Title>Soroban</Pamphlet.Title>
 
-          <div className="mt-20 sm:flex items-center gap-x-16">
-            <div className="max-w-[31rem] basis-9/12">
-              <p>
-                And, of course, it would be neglectful to not talk about the backbone of RPCiege,
-                the
-                <Link href={links.SOROBAN}>Soroban smart contracts platform</Link>, which is
-                designed to work alongside and integrate with the Stellar blockchain. Soroban smart
-                contracts are written in Rust and compiled into Wasm for deployment.
-              </p>
+        <Pamphlet.Content className="sm:flex items-center gap-x-16">
+          <div className="max-w-[31rem] basis-9/12">
+            <p>
+              And, of course, it would be neglectful to not talk about the backbone of RPCiege, the
+              <Link href={links.SOROBAN}>Soroban smart contracts platform</Link>, which is designed
+              to work alongside and integrate with the Stellar blockchain. Soroban smart contracts
+              are written in Rust and compiled into Wasm for deployment.
+            </p>
 
-              <p className="mt-5 md:text-h5 md:font-capitolina">
-                If you’re new to Soroban and want to get your feet wet before diving into RPCiege,
-                the{' '}
-                <Link href={'https://soroban.stellar.org/docs/category/getting-started'}>
-                  Getting Started section
-                </Link>{' '}
-                in the Soroban docs is a great place to begin your journey.
-              </p>
-            </div>
-
-            <Image src={sorobanKnights} alt="" className="min-w-0" />
+            <p className="mt-5 md:text-h5 md:font-capitolina">
+              If you’re new to Soroban and want to get your feet wet before diving into RPCiege, the{' '}
+              <Link href={'https://soroban.stellar.org/docs/category/getting-started'}>
+                Getting Started section
+              </Link>{' '}
+              in the Soroban docs is a great place to begin your journey.
+            </p>
           </div>
+
+          <Image src={sorobanKnights} alt="" className="min-w-0" />
         </Pamphlet.Content>
       </Pamphlet>
     </div>
@@ -382,7 +376,7 @@ const DiveIn = () => {
         smart contract development on Soroban and fight for everlasting peace!
       </p>
 
-      <div className="mt-7 sm:mt-5 flex gap-4">
+      <div className="mt-7 sm:mt-5 w-full flex justify-center max-sm:flex-col gap-4">
         <Link href="/" className="btn btn-primary">
           Play RPCiege
         </Link>

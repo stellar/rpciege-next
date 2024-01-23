@@ -65,28 +65,25 @@ const MobileGiveawayBanner = () => {
         className="relative mx-auto pointer-events-none z-10"
       />
 
-      <Pamphlet className="-mt-16 -rotate-2">
-        <Pamphlet.Content className="">
-          <Pamphlet.Title>Giveaway</Pamphlet.Title>
+      <Pamphlet className="-mt-8 -rotate-2">
+        <Pamphlet.Title>Giveaway</Pamphlet.Title>
 
-          <div className="mt-20 text-body-lg">
-            <p className="first-line:text-h5 first-line:font-capitolina">
-              <span className="drop-cap">R</span> PCiege booster packs are available to collect for
-              accomplished coders who have completed enough skirmishes to claim 20 NFT playing
-              cards. 
-            </p>
+        <Pamphlet.Content className="text-body-lg">
+          <p className="first-line:text-h5 first-line:font-capitolina">
+            <span className="drop-cap">R</span> PCiege booster packs are available to collect for
+            accomplished coders who have completed enough skirmishes to claim 20 NFT playing cards. 
+          </p>
 
-            <p className="mt-2">
-              Brave adventurer, have your feats earned you the right to claim this sweet swag? Prove
-              it by connecting your wallet and showing us your accomplishments!
-            </p>
+          <p className="mt-2">
+            Brave adventurer, have your feats earned you the right to claim this sweet swag? Prove
+            it by connecting your wallet and showing us your accomplishments!
+          </p>
 
-            <button className="mt-10 btn btn-primary w-full">Connect Wallet</button>
+          <button className="mt-10 btn btn-primary w-full">Connect Wallet</button>
 
-            <div className="mt-16 text-black text-body">
-              <p>While supplies last</p>
-              <p>Something else legal will probably need to tell us</p>
-            </div>
+          <div className="mt-16 text-black text-body">
+            <p>While supplies last</p>
+            <p>Something else legal will probably need to tell us</p>
           </div>
         </Pamphlet.Content>
       </Pamphlet>

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import clsx from 'clsx';
 import Link from 'next/link';
 
 import { Banner } from '@/features/landing';
@@ -37,43 +36,34 @@ export default function Home() {
 const ShapeTheFuture = () => {
   return (
     <Pamphlet className="relative mt-8 -rotate-2">
-      <Pamphlet.Content className="flex flex-col">
-        <Pamphlet.Title>Shape the future!</Pamphlet.Title>
+      <Pamphlet.Title>Shape the future!</Pamphlet.Title>
 
-        <div
-          className={clsx(
-            'grid mt-[72px] max-w-[290px] gap-10 text-body-lg',
-            'sm:mt-[101px] sm:max-w-[1000px] sm:grid-cols-2 sm:flex-1'
-          )}
-        >
-          <div className="space-y-10">
-            <div>
-              <h5>Vanquish villainous evildoers</h5>
-              <p className="mt-2.5">
-                Become a hero of legends and immerse yourself in lore and art.
-              </p>
-            </div>
-
-            <div>
-              <h5>Master smart contract development</h5>
-              <p className="mt-2.5">Gain wisdom in smart contract development fundamentals.</p>
-            </div>
+      <Pamphlet.Content className="text-body-lg grid gap-10 sm:gap-10 sm:grid-cols-2">
+        <div className="space-y-10">
+          <div>
+            <h5>Vanquish villainous evildoers</h5>
+            <p className="mt-2.5">Become a hero of legends and immerse yourself in lore and art.</p>
           </div>
 
-          <div className="space-y-10 sm:my-auto">
-            <div>
-              <h5>Hone your Rust knowledge</h5>
-              <p className="mt-2.5">
-                Sharpen your coding savvy by completing bite-sized challenges in Rust.
-              </p>
-            </div>
+          <div>
+            <h5>Master smart contract development</h5>
+            <p className="mt-2.5">Gain wisdom in smart contract development fundamentals.</p>
+          </div>
+        </div>
 
-            <div>
-              <h5>Collect coveted NFT playing cards</h5>
-              <p className="mt-2.5">
-                Amass NFT playing cards dedicated to the feats of your fellow champions.
-              </p>
-            </div>
+        <div className="space-y-10 sm:mt-40">
+          <div>
+            <h5>Hone your Rust knowledge</h5>
+            <p className="mt-2.5">
+              Sharpen your coding savvy by completing bite-sized challenges in Rust.
+            </p>
+          </div>
+
+          <div>
+            <h5>Collect coveted NFT playing cards</h5>
+            <p className="mt-2.5">
+              Amass NFT playing cards dedicated to the feats of your fellow champions.
+            </p>
           </div>
         </div>
       </Pamphlet.Content>
@@ -175,39 +165,37 @@ const leaderboard = [
 const PrepareForTheSiege = () => {
   return (
     <Pamphlet className="z-10 rotate-3">
-      <Pamphlet.Content>
-        <Pamphlet.Title>Prepare for the siege!</Pamphlet.Title>
+      <Pamphlet.Title>Prepare for the siege!</Pamphlet.Title>
 
-        <div className="mt-24 flex flex-wrap gap-x-12 gap-y-4 max-w-4xl">
-          <table className="flex-1 table-pamphlet">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Address</th>
-                <th>Timestamp</th>
-              </tr>
-            </thead>
+      <Pamphlet.Content className="flex flex-wrap gap-x-12 gap-y-4">
+        <table className="flex-1 table-pamphlet">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Address</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
 
-            <tbody>
-              {leaderboard.map(([key, timestamp], i) => {
-                return (
-                  <tr key={key}>
-                    <td>{i + 1}</td>
-                    <td>{`${key.substring(0, 5)}...${key.substring(key.length - 5)}`}</td>
-                    <td>{timestamp}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <tbody>
+            {leaderboard.map(([key, timestamp], i) => {
+              return (
+                <tr key={key}>
+                  <td>{i + 1}</td>
+                  <td>{`${key.substring(0, 5)}...${key.substring(key.length - 5)}`}</td>
+                  <td>{timestamp}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
 
-          <p className="flex-1 basis-3/5 mt-4 first-line:text-h5 first-line:font-capitolina">
-            <span className="drop-cap">B</span>race yourselves, adventurers! New sieges are released
-            periodically, where you will leverage Soroban, the Stellar network's smart contract
-            platform, to complete a set of skirmishes. Or put your mettle to the test by revisiting
-            previous games and claiming the top spot in the corresponding leaderboard.
-          </p>
-        </div>
+        <p className="flex-1 basis-3/5 mt-4 first-line:text-h5 first-line:font-capitolina max-w-[36rem]">
+          <span className="drop-cap">B</span>race yourselves, adventurers! New sieges are released
+          periodically, where you will leverage Soroban, the Stellar network's smart contract
+          platform, to complete a set of skirmishes. Or put your mettle to the test by revisiting
+          previous games and claiming the top spot in the corresponding leaderboard.
+        </p>
       </Pamphlet.Content>
     </Pamphlet>
   );

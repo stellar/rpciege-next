@@ -40,6 +40,7 @@ const menuLinkStyle =
 
 const bulletinItems = [
   <BulletinBoardCard
+    key="siege-5"
     date="December 31st"
     title="Siege 5, Skirmishes 11-14: Space Continuum"
     href="/siege-5"

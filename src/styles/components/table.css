@@ -1,5 +1,5 @@
 .table-pamphlet {
-  @apply text-left;
+  @apply text-left text-body-lg max-sm:font-capitolina;
 
   thead {
     @apply bg-neutral-gray border border-neutral-gray;
@@ -10,6 +10,10 @@
   }
 
   td {
-    @apply p-2 border border-neutral-gray;
+    @apply p-2 sm:p-3 border border-neutral-gray;
+
+    &:first-child {
+      @apply text-center;
+    }
   }
 }

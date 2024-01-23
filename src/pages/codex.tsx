@@ -145,7 +145,7 @@ const DiveIn = () => {
         smart contract development on Soroban and fight for everlasting peace!
       </p>
 
-      <div className="mt-7 sm:mt-5 flex gap-4">
+      <div className="mt-7 sm:mt-5 w-full flex justify-center max-sm:flex-col gap-4">
         <Link href="/" className="btn btn-primary">
           Play RPCiege
         </Link>
