@@ -35,7 +35,7 @@ export default function Home() {
 
 const ShapeTheFuture = () => {
   return (
-    <Pamphlet className="relative mt-8 -rotate-2">
+    <Pamphlet className="mt-16 relative -rotate-2">
       <Pamphlet.Title>Shape the future!</Pamphlet.Title>
 
       <Pamphlet.Content className="text-body-lg grid gap-10 sm:gap-10 sm:grid-cols-2">
@@ -164,7 +164,7 @@ const leaderboard = [
 
 const PrepareForTheSiege = () => {
   return (
-    <Pamphlet className="z-10 rotate-3">
+    <Pamphlet className="mt-32 z-10 rotate-3">
       <Pamphlet.Title>Prepare for the siege!</Pamphlet.Title>
 
       <Pamphlet.Content className="flex flex-wrap gap-x-12 gap-y-4">

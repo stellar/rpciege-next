@@ -79,7 +79,7 @@ const Banner = () => {
 
       <Collection />
 
-      <div className="mt-24 lg:mt-20 grid lg:grid-cols-[5fr_2fr] gap-1 mx-1 mb-1">
+      <div className="mt-24 lg:mt-20 grid lg:grid-cols-[5fr_2fr] gap-1 mx-2 mb-2">
         <Newsletter />
         <Countdown />
       </div>

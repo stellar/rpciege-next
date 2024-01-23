@@ -171,7 +171,7 @@ const Rules = () => {
 
 const Equipment = () => {
   return (
-    <Pamphlet className="mt-24 -rotate-2 text-body-lg isolate">
+    <Pamphlet className="mt-36 -rotate-2 text-body-lg isolate">
       <Pamphlet.Title>Equipment</Pamphlet.Title>
 
       <Pamphlet.Content className="grid lg:grid-cols-2 gap-x-4 gap-y-4">
@@ -219,7 +219,7 @@ const Equipment = () => {
 
 const Preparation = () => {
   return (
-    <div className="mt-16 md:mt-20 pt-12 max-w-max mx-auto shadow-2xl">
+    <div className="mt-16 md:mt-24 pt-12 max-w-max mx-auto shadow-2xl">
       <div className="px-4 max-w-md md:max-w-6xl mx-auto">
         <h2 className="text-h1 lg:text-h1-lg italic">Preparation</h2>
 

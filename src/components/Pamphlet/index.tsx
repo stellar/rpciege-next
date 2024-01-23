@@ -27,8 +27,8 @@ export const PamphletBase = (props: PamphletBaseProps) => {
       />
 
       <figure
-        className="absolute inset-0 pointer-events-none z-20"
-        style={{ backgroundImage: `url(${paperTexture.src})`, backgroundSize: '256px' }}
+        className="absolute inset-0 pointer-events-none"
+        style={{ backgroundImage: `url(${paperTexture.src})` }}
       />
 
       {props.children}
