@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import styles from './styles.module.css';
 
-import cardSleeve from '@/assets/marketing/card-sleeve.png';
+import cardSleeve from '@/assets/card-sleeve-texture.png';
 
 type CardSleeveProps = {
   children: React.ReactNode;

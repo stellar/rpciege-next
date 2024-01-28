@@ -1,0 +1,7 @@
+.BinderPage {
+  @screen sm {
+    :nth-child(3n) {
+      border-right-width: 1px;
+    }
+  }
+}
