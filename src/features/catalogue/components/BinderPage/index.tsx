@@ -15,41 +15,36 @@ import { Rows, Grid, Caret } from '@/components/Icons';
 
 export const BinderPage = () => {
   return (
-    <div>
-      <BinderFilters />
-      <div className="relative max-w-max">
-        <div className="absolute -inset-y-[10%] -left-[27.5%] pointer-events-none">
-          <Image src={binderRings} alt="" className="absolute h-full w-auto left-[5%] z-10" />
-          <Image src={binderSpine} alt="" className="h-full w-auto" />
-        </div>
-
-        <div className="flex justify-center">
+    <div className="max-w-[56.25rem]">
+      <div className="ml-20 flex items-center gap-4 flex-wrap-reverse">
+        <div className="flex-1 flex *:flex-1 *:max-w-[11rem] *:text-nowrap -space-x-4">
           <BinderTab isActive>My Cards</BinderTab>
-          <BinderTab className="-ml-4 -z-10">Card Catalogue</BinderTab>
-          <BinderTab className="-ml-4 -z-20">Deck Builder</BinderTab>
+          <BinderTab className="-z-10">Card Catalogue</BinderTab>
+          <BinderTab className="-z-20">Deck Builder</BinderTab>
         </div>
 
-        <div className="relative bg-neutral-black/15 rounded-md">
-          <div
-            className={clsx(
-              'grid grid-cols-3 max-w-[48rem] gap-y-2.5 p-2 shadow-[16px_8px_24px_rgba(0,0,0,0.2)] pl-[12.5%]',
-              styles.BinderPage
-            )}
-          >
+        <BinderFilters />
+      </div>
+
+      <div className="relative max-w-max">
+        <Image
+          src={binderSpine}
+          alt=""
+          className="pointer-events-none absolute top-1/2 -translate-y-1/2 -left-1/4 h-[115%] w-auto"
+        />
+
+        <div className="relative rounded-md overflow-hidden py-2 pr-[5%] pl-[10%] bg-neutral-black/15 shadow-[16px_8px_24px_rgba(0,0,0,0.2)]">
+          <div className={clsx('grid grid-cols-3 grid-rows-3 gap-y-2.5', styles.BinderPage)}>
             {Array.from({ length: 9 }).map((_, i) => {
               return (
                 <div
                   key={i}
                   className={clsx(
-                    'p-2.5 pt-4 border-l border-t border-b border-white/60 [border-style:solid_dashed_dashed_dashed]',
+                    'p-2.5 pt-4 border border-white/60 [border-style:solid_dashed_dashed_dashed]',
                     styles.BinderItem
                   )}
                 >
-                  <Image
-                    src={vikingRaider}
-                    alt=""
-                    className="rounded-xl shadow-[0px_4px_8px_black]"
-                  />
+                  <Image src={vikingRaider} alt="" className="rounded-xl shadow-2xl" />
                 </div>
               );
             })}
@@ -65,7 +60,15 @@ export const BinderPage = () => {
             style={{ backgroundImage: `url(${paperTexture.src})`, backgroundSize: '1024px' }}
           />
         </div>
+
+        <Image
+          src={binderRings}
+          alt=""
+          className="pointer-events-none absolute top-1/2 -translate-y-1/2 -left-1/4 h-full w-auto"
+        />
       </div>
+
+      <div className="absolute grid *:[grid-area:1/1] pointer-events-none"></div>
     </div>
   );
 };
@@ -77,14 +80,9 @@ type BinderTabProps = {
 const BinderTab = (props: BinderTabProps) => {
   const { isActive, children, ...restProps } = props;
   return (
-    <div {...restProps} className={clsx('relative w-max', restProps.className)}>
-      <div
-        className={clsx(
-          'flex items-stretch p-1 pr-3 isolate',
-          isActive ? '*:bg-primary-red' : '*:bg-neutral-gray'
-        )}
-      >
-        <div className="min-w-[10rem] py-1 px-2 pr-0 text-lg text-center font-nanum uppercase text-neutral-white font-bold rounded-l-md border-2 border-r-0 border-white/40">
+    <div {...restProps} className={clsx('relative p-1 pr-3 ', restProps.className)}>
+      <div className={clsx('flex isolate', isActive ? '*:bg-primary-red' : '*:bg-neutral-gray')}>
+        <div className="flex-1 py-1 px-2 pr-0 text-lg text-center font-nanum uppercase text-neutral-white font-bold rounded-l-md border-2 border-r-0 border-white/40">
           {children}
         </div>
 
@@ -96,7 +94,7 @@ const BinderTab = (props: BinderTabProps) => {
         style={{
           backgroundImage: `url(${cardSleeveTexture.src})`,
           backgroundSize: '512px',
-          clipPath: 'polygon(0 0, 93% 0, 100% 100%, 0% 100%)',
+          clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0% 100%)',
         }}
       />
 
@@ -110,7 +108,7 @@ const BinderTab = (props: BinderTabProps) => {
 
 const BinderFilters = () => {
   return (
-    <div className="relative flex items-center mb-20 gap-6">
+    <div className="relative flex items-center gap-4">
       <Popover>
         {({ open }) => (
           <>

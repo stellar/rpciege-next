@@ -4,13 +4,13 @@ import { Popover } from '@headlessui/react';
 
 import { routes } from '@/constants';
 
-import logo from '@/assets/logo.svg';
-import hamburger from '@/assets/icons/hamburger.svg';
-import helmet from '@/assets/icons/helmet.svg';
-
 import { BulletinBoardCard } from '@/components/BulletinBoard/BulletinBoardCard';
 import { BulletinBoardDropdown } from '@/components/BulletinBoard/BulletinBoardDropdown';
 import { BulletinBoardDisclosure } from '@/components/BulletinBoard/BulletinBoardDisclosure';
+
+import { Helmet, Hamburger } from '@/components/Icons';
+
+import logo from '@/assets/logo.svg';
 
 export const Navbar = () => {
   return (
@@ -70,7 +70,7 @@ const MobileMenu = () => {
   return (
     <Popover className="flex lg:hidden">
       <Popover.Button className="bg-neutral-gray px-2.5">
-        <Image src={hamburger} alt="menu" />
+        <Hamburger className="size-8" />
       </Popover.Button>
 
       <Popover.Panel className="absolute inset-x-0 top-14 bg-neutral-white shadow-2xl divide-y divide-neutral-gray border-b border-neutral-gray z-50">
@@ -87,7 +87,7 @@ const MobileMenu = () => {
         </BulletinBoardDisclosure>
 
         <div className={dropdownLinkStyles}>
-          <Image src={helmet} alt="helmet" />
+          <Helmet className="size-7" />
         </div>
       </Popover.Panel>
     </Popover>
