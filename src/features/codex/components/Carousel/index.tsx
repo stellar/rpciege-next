@@ -3,51 +3,13 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import clsx from 'clsx';
 
-import cursedKnight from '@/assets/cards/cursed-knight.jpg';
-import orbitalCannon from '@/assets/cards/orbital-cannon.jpg';
-import theHacker from '@/assets/cards/the-hacker.jpg';
-import vikingRaider from '@/assets/cards/viking-raider.jpg';
-import theAnnihilator from '@/assets/cards/the-annihilator.jpg';
-
 import tableTop from '@/assets/marketing/table-top.png';
-import arrowRight from '@/assets/icons/arrow-right.svg';
 import redD10 from '@/assets/dice/red-d10.png';
 import redD20 from '@/assets/dice/red-d20.png';
 import yellowD12 from '@/assets/dice/yellow-d12.png';
+import arrowRight from '../../assets/arrow-right.svg';
 
-// TODO: Add full card data or fetch from external API.
-const cardData = [
-  {
-    src: vikingRaider.src,
-    name: 'Viking Raider',
-    description:
-      'Fierce and relentless, the Viking Raider sails forth, their axe and shield a harbinger of conquest and plunder.',
-  },
-  {
-    src: cursedKnight.src,
-    name: 'Cursed Knight',
-    description:
-      'Bound in deathless servitude, the Cursed Knight fights a never-ending battle. Its spectral blade cuts through despair.',
-  },
-  {
-    src: theHacker.src,
-    name: 'The Hacker',
-    description:
-      'A digital samurai, he dances in the shadows of cyberspace, carving new realities from the raw matrix of ones and zeros.',
-  },
-  {
-    src: orbitalCannon.src,
-    name: 'Orbital Cannon',
-    description:
-      'A mechanical eye in the star-studded void. With a cold, calculated precision, it unleashes celestial fury upon the earthbound adversaries below.',
-  },
-  {
-    src: theAnnihilator.src,
-    name: 'The Annihilator',
-    description:
-      'He descends upon evil like a tempest, delivering retribution with unyielding fury. The Annihilator, the shadowed scourge of darkness, fights until all that remains is silence.',
-  },
-];
+import { cardData } from '@/mocks/cardData';
 
 const itemStyle = [
   { x: '0%', y: '0%', zIndex: 3, scale: 1 },

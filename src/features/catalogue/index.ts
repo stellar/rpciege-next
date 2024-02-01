@@ -1,1 +1,1 @@
-export * from './components/BinderPage';
+export * from './components/Binder';
