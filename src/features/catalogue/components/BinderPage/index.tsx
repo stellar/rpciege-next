@@ -8,7 +8,7 @@ const BinderPageBase = (props: React.ComponentPropsWithoutRef<'div'>) => {
   return (
     <div
       className={clsx(
-        'relative rounded-md py-2 pr-[5%] pl-[10%] bg-neutral-black/15 shadow-2xl shadow-black/50',
+        'relative rounded-md py-2 pr-[5%] pl-[10%] -ml-[10%] bg-neutral-black/15 shadow-2xl shadow-black/50',
         props.className
       )}
     >
@@ -27,9 +27,9 @@ const BinderPageBase = (props: React.ComponentPropsWithoutRef<'div'>) => {
   );
 };
 
-const BinderPageItem = (props: React.ComponentPropsWithoutRef<'button'>) => {
+const BinderPageItem = (props: React.ComponentPropsWithoutRef<'div'>) => {
   return (
-    <button
+    <div
       {...props}
       className={clsx(
         'p-2.5 pt-4 border border-white/60 [border-style:solid_dashed_dashed_dashed]',

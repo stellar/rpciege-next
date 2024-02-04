@@ -1,0 +1,21 @@
+.Binder__table {
+  @apply w-full h-max text-black;
+
+  @screen lg {
+    @apply text-body-lg border border-neutral-gray border-separate border-spacing-0 rounded-md px-2;
+  }
+
+  th {
+    @apply px-4 py-4 md:px-6 border-b border-neutral-gray text-left font-normal;
+  }
+
+  tr {
+    + tr td {
+      @apply border-t border-black;
+    }
+  }
+
+  td {
+    @apply px-4 py-6 md:px-6 mt-10;
+  }
+}
