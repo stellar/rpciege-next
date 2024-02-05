@@ -36,7 +36,7 @@ export const BinderRow = (props: BinderRowProps) => {
     <tr {...restProps}>
       <td>
         <div className="flex gap-4 items-center">
-          <img src={card.src} className="w-12 max-md:hidden rounded" />
+          <img src={card.src} className="w-12 max-md:hidden rounded" width={48} height={72} />
           {card.name}
         </div>
       </td>
