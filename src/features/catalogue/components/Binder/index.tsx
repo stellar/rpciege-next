@@ -2,6 +2,8 @@ import { useState } from 'react';
 import clsx from 'clsx';
 import { Popover } from '@headlessui/react';
 
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+
 import { Card } from '@/types/card';
 
 import { Rows, Grid, Caret } from '@/components/Icons';
@@ -9,16 +11,19 @@ import { Rows, Grid, Caret } from '@/components/Icons';
 import { cardData } from '@/mocks/cardData';
 
 import { BinderGridView } from '../BinderGridView';
+import { BinderModal } from '../BinderModal';
 import { BinderRow, BinderRowView } from '../BinderRowView';
-import { CardDetails } from '../CardDetails';
+import { BinderSidePanel } from '../BinderSidePanel';
 import { BinderTabs } from '../BinderTabs';
+import { CardDetails } from '../CardDetails';
 
 export const Binder = () => {
   const [selectedCard, setSelectedCard] = useState<Card>();
   const [isGridView, setIsGridView] = useState(false);
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 1024px)');
 
   return (
-    <div className="max-w-[85rem] mx-auto mb-9 lg:mb-20 lg:mt-24 grid gap-7.5 lg:grid-cols-[2fr_1fr]">
+    <div className="max-w-[85rem] mx-auto mb-9 lg:px-2 lg:mb-20 lg:mt-24 grid gap-7.5 lg:grid-cols-[2fr_1fr]">
       <div>
         <div className="flex flex-col lg:flex-row">
           <BinderTabs />
@@ -49,6 +54,8 @@ export const Binder = () => {
                   'rounded-md shadow-xl shadow-black/50 cursor-pointer',
                   selectedCard === card && 'outline outline-4 outline-primary-red'
                 )}
+                width={272}
+                height={410}
               />
             ))}
           </BinderGridView>
@@ -69,7 +76,15 @@ export const Binder = () => {
         )}
       </div>
 
-      <CardDetails className="" card={selectedCard} />
+      <BinderSidePanel className="max-lg:hidden">
+        {selectedCard ? <CardDetails className="p-8" card={selectedCard} /> : null}
+      </BinderSidePanel>
+
+      {isSmallDevice && selectedCard ? (
+        <BinderModal open onClose={() => setSelectedCard(undefined)}>
+          <CardDetails className="p-8" card={selectedCard} />
+        </BinderModal>
+      ) : null}
     </div>
   );
 };
