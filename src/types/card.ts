@@ -1,3 +1,6 @@
+export type CardPack = 'Midnight Madness';
+export type CardType = 'Land' | 'Space';
+
 export type Card = {
   src: string;
   name: string;
@@ -5,6 +8,6 @@ export type Card = {
   backstory: string;
   power: number;
   modifier: number;
-  type: string;
-  pack: string;
+  pack: CardPack;
+  type: CardType;
 };
