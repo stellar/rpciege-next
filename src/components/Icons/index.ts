@@ -1,3 +1,4 @@
+import ArrowRight from '@/assets/icons/arrow-right.svg';
 import Caret from '@/assets/icons/caret.svg';
 import CaretOutline from '@/assets/icons/caret-outline.svg';
 import Close from '@/assets/icons/close.svg';
@@ -7,4 +8,4 @@ import Helmet from '@/assets/icons/helmet.svg';
 import Rows from '@/assets/icons/rows.svg';
 import Search from '@/assets/icons/search.svg';
 
-export { Caret, CaretOutline, Close, Grid, Hamburger, Helmet, Rows, Search };
+export { ArrowRight, Caret, CaretOutline, Close, Grid, Hamburger, Helmet, Rows, Search };

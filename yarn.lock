@@ -1093,6 +1093,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@mantine/hooks@^7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-7.5.1.tgz#c95855e9bfcffca26a22f21389ff6c3157113758"
+  integrity sha512-LfrEOkX8U2KbkYAU5BMA7FPbMva/TSd65c45W35wHSx3iqYMsoPN9+Ll1zc/HT0XNFp73jGet9cU7VREbAl0/A==
+
 "@next/env@14.0.1":
   version "14.0.1"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.0.1.tgz#7d03c9042c205a320aef2ea3f83c2d16b6825563"

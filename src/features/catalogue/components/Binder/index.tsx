@@ -1,17 +1,17 @@
 import { useState } from 'react';
+import { useMediaQuery } from '@mantine/hooks';
 import clsx from 'clsx';
-
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 import { Card } from '@/types/card';
 
 import { Rows, Grid } from '@/components/Icons';
 
-import { useCards } from '../../hooks/useCards';
+import { useBinderContext } from '../..';
 
 import { BinderFilters } from '../BinderFilters';
 import { BinderGridView } from '../BinderGridView';
 import { BinderModal } from '../BinderModal';
+import { BinderPaginator } from '../BinderPaginator';
 import { BinderRow, BinderRowView } from '../BinderRowView';
 import { BinderSidePanel } from '../BinderSidePanel';
 import { BinderTabs } from '../BinderTabs';
@@ -22,7 +22,7 @@ export const Binder = () => {
   const [isGridView, setIsGridView] = useState(false);
   const isSmallDevice = useMediaQuery('only screen and (max-width : 1024px)');
 
-  const cards = useCards();
+  const { cards } = useBinderContext();
 
   return (
     <div className="max-w-[85rem] mx-auto mb-9 lg:px-2 lg:mb-20 lg:mt-24 grid gap-7.5 lg:grid-cols-[2fr_1fr]">
@@ -76,6 +76,8 @@ export const Binder = () => {
             ))}
           </BinderRowView>
         )}
+
+        <BinderPaginator className="mt-10 mx-auto" />
       </div>
 
       <BinderSidePanel className="max-lg:hidden">

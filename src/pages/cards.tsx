@@ -1,9 +1,11 @@
-import { Binder } from '@/features/catalogue';
+import { Binder, BinderProvider } from '@/features/catalogue';
 
 export default function Cards() {
   return (
     <main className="overflow-hidden">
-      <Binder />
+      <BinderProvider>
+        <Binder />
+      </BinderProvider>
     </main>
   );
 }

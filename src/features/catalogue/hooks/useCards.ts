@@ -1,8 +1,11 @@
 import { useMemo } from 'react';
+import { usePagination } from '@mantine/hooks';
 
 import { cardData } from '@/mocks/cardData';
 
 import { useFilterParams } from './useFilterParams';
+
+const ITEMS_PER_PAGE = 9;
 
 export const useCards = () => {
   const [filters] = useFilterParams();
@@ -40,5 +43,15 @@ export const useCards = () => {
     return sortedCards;
   }, [filters]);
 
-  return cards;
+  const pagination = usePagination({
+    total: Math.ceil(cards.length / ITEMS_PER_PAGE),
+    siblings: 0,
+  });
+
+  const paginatedCards = cards.slice(
+    (pagination.active - 1) * ITEMS_PER_PAGE,
+    pagination.active * ITEMS_PER_PAGE
+  );
+
+  return { cards: paginatedCards, pagination };
 };
