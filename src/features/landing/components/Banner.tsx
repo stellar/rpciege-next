@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { routes } from '@/constants';
+
 import { CardSleeve } from '@/components/CardSleeve';
 
 import landingBanner from '@/assets/marketing/landing-banner.png';
@@ -14,7 +16,7 @@ export const Banner = () => {
       <BannerBackground />
 
       <Link
-        href="/"
+        href={routes.GETTING_STARTED}
         className="absolute left-1/2 -translate-x-1/2 min-w-max bottom-[30%] -rotate-2"
       >
         <CardSleeve>

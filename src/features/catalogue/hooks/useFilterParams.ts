@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation';
 
@@ -18,15 +19,17 @@ export function useFilterParams() {
     });
   };
 
-  const pack = searchParams.has('pack') ? (searchParams.get('pack') as CardPack) : undefined;
-  const type = searchParams.has('type') ? (searchParams.get('type') as CardType) : undefined;
-  const sort = searchParams.has('sort') ? (searchParams.get('sort') as Sort) : undefined;
+  const params = useMemo(() => {
+    const pack = searchParams.has('pack') ? (searchParams.get('pack') as CardPack) : undefined;
+    const type = searchParams.has('type') ? (searchParams.get('type') as CardType) : undefined;
+    const sort = searchParams.has('sort') ? (searchParams.get('sort') as Sort) : undefined;
 
-  const params = filterUndefined({
-    pack,
-    type,
-    sort,
-  });
+    return filterUndefined({
+      pack,
+      type,
+      sort,
+    });
+  }, [searchParams]);
 
   return [params, setParams] as const;
 }

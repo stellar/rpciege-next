@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Popover } from '@headlessui/react';
 
-import { routes } from '@/constants';
+import { links, routes } from '@/constants';
 
 import { BulletinBoardCard } from '@/components/BulletinBoard/BulletinBoardCard';
 import { BulletinBoardDropdown } from '@/components/BulletinBoard/BulletinBoardDropdown';
@@ -15,7 +15,7 @@ import logo from '@/assets/logo.svg';
 export const Navbar = () => {
   return (
     <nav className="flex justify-between border-b border-neutral-gray h-14 lg:border lg:mx-0.5 lg:mt-0.5 relative">
-      <Link href="/" className="px-3 flex items-center">
+      <Link href={routes.HOME} className="px-3 flex items-center">
         <Image src={logo} alt="logo" className="w-[117.1px]" />
       </Link>
 
@@ -23,7 +23,7 @@ export const Navbar = () => {
 
       <div className="flex">
         <Link
-          href="/"
+          href={links.RPCIEGE_BOOKLET}
           className="font-nanum font-bold uppercase flex items-center px-7.5 border-l border-neutral-gray bg-primary-red text-neutral-black"
         >
           Play Game

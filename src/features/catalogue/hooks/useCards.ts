@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { usePagination } from '@mantine/hooks';
 
 import { cardData } from '@/mocks/cardData';
@@ -52,6 +52,10 @@ export const useCards = () => {
     (pagination.active - 1) * ITEMS_PER_PAGE,
     pagination.active * ITEMS_PER_PAGE
   );
+
+  useEffect(() => {
+    pagination.first();
+  }, [filters]);
 
   return { cards: paginatedCards, pagination };
 };

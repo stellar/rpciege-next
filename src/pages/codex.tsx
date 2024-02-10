@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 
+import { links, routes } from '@/constants';
+
 import { Link } from '@/components/Link';
 import { RulesCard } from '@/components/RulesCard';
 import { Carousel } from '@/features/codex';
@@ -146,11 +148,11 @@ const DiveIn = () => {
       </p>
 
       <div className="mt-7 sm:mt-5 w-full flex justify-center max-sm:flex-col gap-4">
-        <Link href="/" className="btn btn-primary">
+        <Link href={links.RPCIEGE_BOOKLET} className="btn btn-primary">
           Play RPCiege
         </Link>
 
-        <Link href="/" className="btn btn-primary">
+        <Link href={routes.CLAIM} className="btn btn-primary">
           Claim Cards
         </Link>
       </div>

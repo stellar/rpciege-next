@@ -1,5 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
+
+import { links, routes } from '@/constants';
+
+import { Link } from '@/components/Link';
 
 import { Banner } from '@/features/landing';
 import { CardSleeve } from '@/components/CardSleeve';
@@ -103,11 +106,11 @@ const GatherYourArmy = () => {
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-7 mt-12 md:mt-15">
-            <Link href="/" className="btn btn-primary">
+            <Link href={links.RPCIEGE_BOOKLET} className="btn btn-primary">
               Play RPCiege
             </Link>
 
-            <Link href="/" className="btn btn-primary">
+            <Link href={routes.CLAIM} className="btn btn-primary">
               Claim Cards
             </Link>
           </div>
@@ -143,7 +146,7 @@ const ForgeAlliances = () => {
         </div>
       </div>
 
-      <Link href="/" className="rotate-12 py-8">
+      <Link href={links.DISCORD} className="rotate-12 py-8">
         <CardSleeve>
           <Image src={discordCard} alt="Discord invite" />
         </CardSleeve>
@@ -224,21 +227,21 @@ const Community = () => {
         </p>
 
         <div className="mt-7.5 flex flex-col items-center gap-4 sm:flex-row sm:gap-12">
-          <Link href="/" className="-rotate-12 relative">
+          <Link href={links.YOUTUBE} className="-rotate-12 relative">
             <CardSleeve>
               <Image src={youtubeCard} alt="youtube card" />
             </CardSleeve>
           </Link>
 
-          <Link href="/" className="sm:mb-[20%]">
+          <Link href={links.TWITTER} className="sm:mb-[20%]">
             <CardSleeve>
-              <Image src={twitterCard} alt="youtube card" />
+              <Image src={twitterCard} alt="twitter card" />
             </CardSleeve>
           </Link>
 
-          <Link href="/" className="rotate-12">
+          <Link href={links.DEV_BLOG} className="rotate-12">
             <CardSleeve>
-              <Image src={blogCard} alt="youtube card" />
+              <Image src={blogCard} alt="blog card" />
             </CardSleeve>
           </Link>
         </div>

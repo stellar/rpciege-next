@@ -76,13 +76,13 @@ export const Binder = () => {
             ))}
           </BinderRowView>
         )}
-
-        <BinderPaginator className="mt-10 mx-auto" />
       </div>
 
       <BinderSidePanel className="max-lg:hidden">
         {selectedCard ? <CardDetails className="p-8" card={selectedCard} /> : null}
       </BinderSidePanel>
+
+      <BinderPaginator className="mx-auto" />
 
       {isSmallDevice && selectedCard ? (
         <BinderModal open onClose={() => setSelectedCard(undefined)}>

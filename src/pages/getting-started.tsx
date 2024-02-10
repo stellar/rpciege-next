@@ -138,8 +138,7 @@ const Rules = () => {
           <p>
             Learn about upcoming sieges by keeping an eye out for announcements in the coding games
             channels in the <Link href={links.DISCORD}>Stellar Developer Discord</Link> or by
-            following
-            <Link href={links.TWITTER}>Soroban on Twitter</Link>.
+            following <Link href={links.TWITTER}>Soroban on Twitter</Link>.
           </p>
         </RulesCard>
 
@@ -321,7 +320,7 @@ const Soroban = () => {
         <Pamphlet.Content className="sm:flex items-center gap-x-16">
           <div className="max-w-[31rem] basis-9/12">
             <p>
-              And, of course, it would be neglectful to not talk about the backbone of RPCiege, the
+              And, of course, it would be neglectful to not talk about the backbone of RPCiege, the{' '}
               <Link href={links.SOROBAN}>Soroban smart contracts platform</Link>, which is designed
               to work alongside and integrate with the Stellar blockchain. Soroban smart contracts
               are written in Rust and compiled into Wasm for deployment.
@@ -377,11 +376,11 @@ const DiveIn = () => {
       </p>
 
       <div className="mt-7 sm:mt-5 w-full flex justify-center max-sm:flex-col gap-4">
-        <Link href="/" className="btn btn-primary">
+        <Link href={links.RPCIEGE_BOOKLET} className="btn btn-primary">
           Play RPCiege
         </Link>
 
-        <Link href="/" className="btn btn-primary">
+        <Link href={routes.CLAIM} className="btn btn-primary">
           Claim Cards
         </Link>
       </div>

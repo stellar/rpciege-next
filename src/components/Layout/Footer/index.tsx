@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 
 import { Link } from '@/components/Link';
+import { links } from '@/constants';
 
 export const Footer = (props: any) => {
   return (
@@ -18,21 +19,21 @@ export const Footer = (props: any) => {
       <FooterSection>
         <p>© 2023 Stellar</p>
 
-        <Link href="/">Privacy Policy</Link>
+        <Link href={links.PRIVACY_POLICY}>Privacy Policy</Link>
 
-        <Link href="/">Terms and Conditions</Link>
+        <Link href={links.TOS}>Terms and Conditions</Link>
       </FooterSection>
 
       <div className="border-t border-neutral-black self-stretch lg:hidden" />
 
       <FooterSection>
-        <Link href="/">Play the Game</Link>
+        <Link href={links.RPCIEGE_BOOKLET}>Play the Game</Link>
 
-        <Link href="/">Learn about Soroban</Link>
+        <Link href={links.SOROBAN}>Learn about Soroban</Link>
 
-        <Link href="/">Join the Discord</Link>
+        <Link href={links.DISCORD}>Join the Discord</Link>
 
-        <Link href="/">Follow on Twitter</Link>
+        <Link href={links.TWITTER}>Follow on Twitter</Link>
       </FooterSection>
     </div>
   );

@@ -159,6 +159,7 @@ const Countdown = () => {
   );
 };
 
+// TODO: Update copy
 const Practice = () => {
   return (
     <div className="mt-20 md:mt-32 grid *:[grid-area:1/1] place-items-center mx-2 rounded-3xl overflow-hidden">
