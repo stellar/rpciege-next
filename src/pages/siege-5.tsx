@@ -127,8 +127,8 @@ const Newsletter = () => {
         </p>
 
         <form className="mt-3 flex max-sm:flex-col gap-x-6 gap-y-3">
-          <NewsletterInput type="text" placeholder="Name" />
-          <NewsletterInput type="email" placeholder="Email Address" />
+          <NewsletterInput type="text" placeholder="Name" name="name" required />
+          <NewsletterInput type="email" placeholder="Email Address" required />
           <button className="btn btn-secondary">Submit</button>
         </form>
       </div>

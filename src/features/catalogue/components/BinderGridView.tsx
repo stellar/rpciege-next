@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-import binderRings from '@/assets/binder-rings.svg';
-import binderSpine from '@/assets/binder-spine.svg';
+import binderRings from '../assets/binder-rings.svg';
+import binderSpine from '../assets/binder-spine.svg';
 
 import { BinderPage } from './BinderPage';
 

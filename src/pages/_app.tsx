@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import localFont from 'next/font/local';
 import { Merriweather } from 'next/font/google';
+import Script from 'next/script';
 
 import { BaseLayout } from '@/components/Layout/BaseLayout';
 
@@ -30,6 +31,16 @@ export default function App({ Component, pageProps }: AppProps) {
           --font-merriweather: ${merriweather.style.fontFamily};
         }
       `}</style>
+
+      {/* Start of HubSpot Embed Code */}
+      <Script
+        type="text/javascript"
+        id="hs-script-loader"
+        async
+        defer
+        src="//js.hs-scripts.com/8130068.js"
+      ></Script>
+      {/* End of HubSpot Embed Code */}
 
       <BaseLayout>
         <Component {...pageProps} />
