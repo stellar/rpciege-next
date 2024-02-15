@@ -17,8 +17,8 @@ const config: Config = {
         primary: {
           red: '#E94F2D',
           yellow: '#FBD07D',
-          green: '#6F60AB',
-          purple: '#6D8C98',
+          green: '#6D8C98',
+          purple: '#6F60AB',
         },
         neutral: {
           white: '#F1EEE4',

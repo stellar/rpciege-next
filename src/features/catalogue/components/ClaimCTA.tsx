@@ -15,7 +15,7 @@ export const ClaimCTA = (props: ClaimCTAProps) => {
     <div
       {...props}
       className={clsx(
-        'relative grid md:grid-cols-3 gap-x-8 items-center p-4 md:px-8 rounded-2xl text-center bg-primary-red text-white overflow-hidden',
+        'relative grid md:grid-cols-3 gap-x-8 items-center p-4 md:px-8 rounded-2xl text-center bg-primary-red text-white overflow-hidden isolate',
         props.className
       )}
     >

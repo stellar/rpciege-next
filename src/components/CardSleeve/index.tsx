@@ -14,7 +14,7 @@ export const CardSleeve = (props: CardSleeveProps) => {
   const child = React.Children.only(props.children);
 
   return (
-    <div className={clsx('group p-1 pt-6 max-w-max', styles.CardSleeve, props.className)}>
+    <div className={clsx('group p-1 pt-6 max-w-max isolate', styles.CardSleeve, props.className)}>
       <figure
         className="absolute inset-0 bg-cover pointer-events-none z-10 border border-neutral-white/40"
         style={{ backgroundImage: `url(${cardSleeve.src})` }}

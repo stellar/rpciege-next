@@ -59,13 +59,9 @@ const GiveawayBanner = () => {
 const MobileGiveawayBanner = () => {
   return (
     <div className="sm:hidden mb-36">
-      <Image
-        src={giveawayBannerCenter}
-        alt=""
-        className="relative mx-auto pointer-events-none z-10"
-      />
+      <Image src={giveawayBannerCenter} alt="" className="relative mx-auto pointer-events-none" />
 
-      <Pamphlet className="-mt-8 -rotate-2">
+      <Pamphlet className="-mt-8 -rotate-2 -z-10">
         <Pamphlet.Title>Giveaway</Pamphlet.Title>
 
         <Pamphlet.Content className="text-body-lg">

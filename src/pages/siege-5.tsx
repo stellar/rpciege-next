@@ -57,10 +57,10 @@ const Banner = () => {
           <Image
             src={horrorPack}
             alt=""
-            className="relative md:hidden w-[334px] -rotate-6 mx-auto -mb-32 z-10"
+            className="relative md:hidden w-[334px] -rotate-6 mx-auto -mb-32"
           />
 
-          <RulesCard className="pt-36 px-7.5 pb-14 md:mt-12 md:p-14">
+          <RulesCard className="pt-36 px-7.5 pb-14 md:mt-12 md:p-14 -z-10">
             <h5>Midnight Madness</h5>
             <p className="mt-5">
               Following the defeat of the ruthless overlords, a different type of monster emerged.

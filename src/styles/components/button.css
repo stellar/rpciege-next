@@ -1,5 +1,5 @@
 .btn {
-  @apply inline-block font-capitolina text-xl uppercase font-extrabold rounded-xl px-7.5 py-5 leading-none text-center;
+  @apply inline-flex items-center justify-center font-capitolina text-xl uppercase font-extrabold rounded-xl px-7.5 py-5 leading-none text-center disabled:cursor-not-allowed;
   box-shadow: 0px 4px 0px 0px #292827;
 
   &-primary {

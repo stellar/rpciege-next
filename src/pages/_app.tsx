@@ -5,6 +5,7 @@ import { Merriweather } from 'next/font/google';
 import Script from 'next/script';
 
 import { BaseLayout } from '@/components/Layout/BaseLayout';
+import { QueryProvider } from '@/providers/QueryProvider';
 
 const nanumGothicCoding = localFont({
   src: [
@@ -42,9 +43,11 @@ export default function App({ Component, pageProps }: AppProps) {
       ></Script>
       {/* End of HubSpot Embed Code */}
 
-      <BaseLayout>
-        <Component {...pageProps} />
-      </BaseLayout>
+      <QueryProvider>
+        <BaseLayout>
+          <Component {...pageProps} />
+        </BaseLayout>
+      </QueryProvider>
     </>
   );
 }

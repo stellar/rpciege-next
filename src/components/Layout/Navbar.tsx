@@ -1,16 +1,21 @@
+import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/components/Link';
 import { Popover } from '@headlessui/react';
 
 import { links, routes } from '@/constants';
 
+import { useWallet } from '@/hooks/useWallet';
+
 import { BulletinBoardCard } from '@/components/BulletinBoard/BulletinBoardCard';
 import { BulletinBoardDropdown } from '@/components/BulletinBoard/BulletinBoardDropdown';
 import { BulletinBoardDisclosure } from '@/components/BulletinBoard/BulletinBoardDisclosure';
+import { SignInModal } from '@/components/SignInModal';
 
-import { Helmet, Hamburger } from '@/components/Icons';
+import { Helmet, Hamburger, Caret } from '@/components/Icons';
 
 import logo from '@/assets/logo.svg';
+import clsx from 'clsx';
 
 export const Navbar = () => {
   return (
@@ -22,6 +27,8 @@ export const Navbar = () => {
       <DesktopMenu />
 
       <div className="flex">
+        <SignInButton />
+
         <Link
           href={links.RPCIEGE_BOOKLET}
           className="font-nanum font-bold uppercase flex items-center px-7.5 border-l border-neutral-gray bg-primary-red text-neutral-black"
@@ -58,7 +65,11 @@ const DesktopMenu = () => {
         Codex
       </Link>
 
-      <BulletinBoardDropdown className={menuLinkStyle}>{bulletinItems}</BulletinBoardDropdown>
+      <Link href={routes.GIVEWAY} className={menuLinkStyle}>
+        Giveaway
+      </Link>
+
+      {/* <BulletinBoardDropdown className={menuLinkStyle}>{bulletinItems}</BulletinBoardDropdown> */}
     </div>
   );
 };
@@ -91,5 +102,43 @@ const MobileMenu = () => {
         </div>
       </Popover.Panel>
     </Popover>
+  );
+};
+
+const SignInButton = () => {
+  const wallet = useWallet();
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      {wallet.publicKey ? (
+        <Popover className="relative">
+          {({ open }) => (
+            <>
+              <Popover.Button className="h-full font-nanum font-bold uppercase flex items-center px-7.5 gap-1">
+                <p className="overflow-hidden overflow-ellipsis max-w-[10ch]">{wallet.publicKey}</p>
+                <Caret className={clsx('transition-transform size-3 ', open && 'rotate-180')} />
+              </Popover.Button>
+
+              <Popover.Panel className="w-full max-w-[14rem] absolute top-full right-0 mt-2 bg-neutral-white z-50 rounded-md border border-black p-6 text-h6 font-nanum space-y-4 *:block *:text-neutral-gray">
+                <Link href={routes.CARDS}>My Cards</Link>
+
+                <button onClick={() => wallet.disconnect()}>Disconnect</button>
+              </Popover.Panel>
+            </>
+          )}
+        </Popover>
+      ) : (
+        <button
+          className="mr-4 max-lg:hidden flex items-center gap-4"
+          onClick={() => setIsOpen(true)}
+        >
+          <p className="text-h6 font-nanum uppercase">Sign In</p>
+          <Helmet className="size-7" />
+        </button>
+      )}
+
+      <SignInModal open={isOpen} onClose={() => setIsOpen(false)} />
+    </>
   );
 };

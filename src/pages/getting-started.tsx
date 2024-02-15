@@ -280,7 +280,8 @@ const CollectingCards = () => {
         </div>
 
         <p className="max-w-[40rem] text-h5 mt-7 lg:mt-10 font-capitolina">
-          Read more about the characters and lore on our <Link href="/">World page</Link>.
+          Read more about the characters and lore on our <Link href={routes.CODEX}>World page</Link>
+          .
         </p>
       </div>
 
@@ -314,7 +315,7 @@ const Soroban = () => {
         className="absolute right-1/2 max-sm:w-[200px] mr-12 sm:mr-96 -translate-y-1/2 -rotate-[20deg]"
       />
 
-      <Pamphlet className="-rotate-2 text-body-lg z-10">
+      <Pamphlet className="-rotate-2 text-body-lg">
         <Pamphlet.Title>Soroban</Pamphlet.Title>
 
         <Pamphlet.Content className="sm:flex items-center gap-x-16">

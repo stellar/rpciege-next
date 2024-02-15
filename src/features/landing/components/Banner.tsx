@@ -12,7 +12,7 @@ import vikingRaider from '@/assets/cards/viking-raider.jpg';
 
 export const Banner = () => {
   return (
-    <div className="relative z-10 max-w-[1412px] mx-auto pt-10 py-2 sm:px-2 shadow-2xl">
+    <div className="relative max-w-[1412px] mx-auto pt-10 py-2 sm:px-2 shadow-2xl">
       <BannerBackground />
 
       <Link

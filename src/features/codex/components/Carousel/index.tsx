@@ -47,7 +47,7 @@ export const Carousel = (props: CarouselProps) => {
       />
 
       <div className="flex flex-col items-center">
-        <div className="grid grid-cols-[minmax(3rem,1fr)_auto_minmax(3rem,1fr)] gap-4 items-center">
+        <div className="grid grid-cols-[minmax(3rem,1fr)_auto_minmax(3rem,1fr)] gap-4 items-center isolate">
           <button
             className="z-10 justify-self-end"
             onClick={() => setSelectedIndex((oldIndex) => wrapIndex(oldIndex - 1))}
