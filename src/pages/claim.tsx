@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Image from 'next/image';
 
 import { useWallet } from '@/hooks/useWallet';
 import { useListClaimableBalances } from '@/api/horizon/listClaimableBalances';
 import { PACK_SPONSOR } from '@/constants/accounts';
+import { ClaimableBalance } from '@/types/horizon';
+
+import packCards from '@/constants/pack_cards.json';
 
 import { Button } from '@/components/Button';
 import { SignInModal } from '@/components/SignInModal';
@@ -72,6 +75,27 @@ const ClaimButton = (props: { claimant: string }) => {
 
   const claimableBalances = cbQuery.data._embedded.records;
 
+  const packs = useMemo(() => {
+    const _packs: Record<string, ClaimableBalance[]> = {};
+
+    for (const record of claimableBalances) {
+      const [code, issuer] = record.asset.split(':');
+
+      const packIndex = packCards.findIndex((pack) => pack.includes(processAssetCode(code)));
+      const packKey = packIndex > -1 ? `pack_${packIndex + 1}` : 'pack_0';
+
+      const pack = { ...record, code, issuer };
+
+      if (_packs[packKey]) {
+        _packs[packKey].push(pack);
+      } else {
+        _packs[packKey] = [pack];
+      }
+    }
+
+    return _packs;
+  }, [claimableBalances]);
+
   return (
     <>
       <Button
@@ -90,3 +114,9 @@ const ClaimButton = (props: { claimant: string }) => {
     </>
   );
 };
+
+function processAssetCode(code: string) {
+  if (code.substr(-1) === 'c') return code.replace(/[a-z]/g, '').replace('RPCIEGE', 'RPCIEGE0');
+
+  return code;
+}

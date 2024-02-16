@@ -3,6 +3,11 @@ export const horizon = {
   PUBLIC: 'https://horizon.stellar.org',
 };
 
+export const api = Object.freeze({
+  RPCIEGE: ' https://api.rpciege.com',
+  DISCORD: 'https://discord.com/api',
+});
+
 const RATE_LIMIT_ERROR_MESSAGE = 'Rate Limited! Please try again later.';
 
 export async function handleResponse(response: Response) {
