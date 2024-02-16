@@ -70,15 +70,12 @@ const ConnectButton = () => {
 const ClaimButton = (props: { claimant: string }) => {
   const cbQuery = useListClaimableBalances({ claimant: props.claimant, sponsor: PACK_SPONSOR });
 
-  if (cbQuery.isPending) return <PulseLoader />;
-  if (cbQuery.isError) return <div>Failed to load claimable balances</div>;
-
-  const claimableBalances = cbQuery.data._embedded.records;
-
   const packs = useMemo(() => {
     const _packs: Record<string, ClaimableBalance[]> = {};
 
-    for (const record of claimableBalances) {
+    if (!cbQuery.data) return _packs;
+
+    for (const record of cbQuery.data._embedded.records) {
       const [code, issuer] = record.asset.split(':');
 
       const packIndex = packCards.findIndex((pack) => pack.includes(processAssetCode(code)));
@@ -94,7 +91,12 @@ const ClaimButton = (props: { claimant: string }) => {
     }
 
     return _packs;
-  }, [claimableBalances]);
+  }, [cbQuery.data]);
+
+  if (cbQuery.isPending) return <PulseLoader />;
+  if (cbQuery.isError) return <div>Failed to load claimable balances</div>;
+
+  const claimableBalances = cbQuery.data._embedded.records;
 
   return (
     <>
