@@ -3,13 +3,11 @@ import Image from 'next/image';
 
 import { useWallet } from '@/hooks/useWallet';
 
-import { Button } from '@/components/Button';
 import { SignInModal } from '@/components/SignInModal';
-import { PulseLoader } from '@/components/Icons';
 
 import claimBanner from '@/assets/marketing/claim-banner.png';
 
-import { ClaimablePacksList, usePackClaimableBalances } from '@/features/claim';
+import { ClaimButton } from '@/features/claim';
 
 export default function Claim() {
   return (
@@ -48,16 +46,6 @@ const ClaimBanner = () => {
           </div>
         </div>
       </div>
-
-      <div className="max-w-6xl mx-auto mt-10 md:mt-20 px-4 flex flex-col items-center">
-        <h3 className="text-center mb-8">Claimable Packs</h3>
-
-        {wallet.publicKey ? (
-          <ClaimablePacksList claimant={wallet.publicKey} />
-        ) : (
-          <p>Connect your wallet.</p>
-        )}
-      </div>
     </div>
   );
 };
@@ -72,35 +60,6 @@ const ConnectButton = () => {
       </button>
 
       <SignInModal open={isOpen} onClose={() => setIsOpen(false)} />
-    </>
-  );
-};
-
-const ClaimButton = (props: { claimant: string }) => {
-  const cbQuery = usePackClaimableBalances({ claimant: props.claimant });
-
-  if (cbQuery.isPending) return <PulseLoader />;
-  if (cbQuery.isError) return <div>Failed to load claimable balances</div>;
-
-  const claimablePacks = cbQuery.data;
-
-  const claimablePacksCount = Object.keys(claimablePacks).length;
-
-  return (
-    <>
-      <Button
-        className="btn btn-primary max-sm:w-full"
-        isDisabled={claimablePacksCount === 0}
-        spinnerPosition="right"
-      >
-        Claim
-      </Button>
-
-      {claimablePacksCount === 0 ? (
-        <p className="mt-3 text-body-xs uppercase font-nanum font-bold">
-          You have no packs available to claim.
-        </p>
-      ) : null}
     </>
   );
 };

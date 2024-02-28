@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 
 import { ClaimableBalance } from '@/types/horizon';
 
@@ -6,7 +6,6 @@ import { api, handleResponse } from '..';
 
 export type ExtendedClaimableBalance = ClaimableBalance & {
   code: string;
-  id: string;
   issuer: string;
 };
 
@@ -24,8 +23,6 @@ export const claimClaimableBalances = (
 };
 
 export const useClaimClaimableBalances = (options: ClaimClaimableBalancesOptions) => {
-  const queryClient = useQueryClient();
-
   return useMutation({
     mutationKey: ['rpciege', 'claim', 'claimable_balances', options],
     mutationFn: () => claimClaimableBalances(options),

@@ -12,6 +12,8 @@ export const getToml = (): Promise<TomlResponse> => {
     .then((toml) => parse(toml));
 };
 
-export const useGetToml = () => {
-  return useQuery({ queryKey: ['toml', 'fca00c'], queryFn: getToml });
+export const useGetToml = <SelectType = TomlResponse>(options?: {
+  select?: (data: TomlResponse) => SelectType;
+}) => {
+  return useQuery({ queryKey: ['toml', 'fca00c'], queryFn: getToml, select: options?.select });
 };

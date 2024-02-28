@@ -5,4 +5,5 @@ export const routes = Object.freeze({
   GETTING_STARTED: '/getting-started',
   GIVEWAY: '/giveaway',
   HOME: '/',
+  MY_CARDS: '/my-cards',
 });

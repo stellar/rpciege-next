@@ -28,6 +28,7 @@ type ClaimablePackProps = {
   records: ExtendedClaimableBalance[];
 };
 
+// TODO: Implement if needed to claim individual packs
 export const ClaimablePack = (props: ClaimablePackProps) => {
   const { packId, pubkey, records } = props;
 

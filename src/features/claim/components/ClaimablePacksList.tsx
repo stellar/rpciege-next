@@ -1,11 +1,12 @@
 import { PulseLoader } from '@/components/Icons';
-import { usePackClaimableBalances } from '../hooks/usePackClaimableBalances';
+import { usePackClaimableBalances } from '@/hooks/usePackClaimableBalances';
 import { ClaimablePack } from './ClaimablePack';
 
 type ClaimablePacksListProps = {
   claimant: string;
 };
 
+// TODO: Implement if needed to claim individual packs
 export const ClaimablePacksList = (props: ClaimablePacksListProps) => {
   const cbQuery = usePackClaimableBalances({ claimant: props.claimant });
 
@@ -15,9 +16,9 @@ export const ClaimablePacksList = (props: ClaimablePacksListProps) => {
 
   return (
     <div className="">
-      {Object.entries(cbQuery.data).map(([packId, records]) => (
+      {/* {Object.entries(cbQuery.data).map(([packId, records]) => (
         <ClaimablePack packId={packId} pubkey={props.claimant} records={records} />
-      ))}
+      ))} */}
     </div>
   );
 };

@@ -1,3 +1,2 @@
 export * from './components/ClaimablePacksList';
-
-export * from './hooks/usePackClaimableBalances';
+export * from './components/ClaimButton';

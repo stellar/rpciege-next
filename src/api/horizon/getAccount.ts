@@ -14,10 +14,13 @@ export const getAccount = ({ publicKey }: GetAccountOptions): Promise<Account> =
   return fetch(`${url}/accounts/${publicKey}`).then(handleResponse);
 };
 
-export const useGetAccount = (options: GetAccountOptions) => {
+export const useGetAccount = <SelectType = Account>(
+  options: GetAccountOptions & { select?: (data: Account) => SelectType }
+) => {
   return useQuery({
     queryKey: ['horizon', 'account', options],
     queryFn: () => getAccount(options),
     enabled: !!options.publicKey,
+    select: options.select,
   });
 };
