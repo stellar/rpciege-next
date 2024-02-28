@@ -10,16 +10,14 @@ import { Modal } from '@/components/Modal';
 import { ClaimSummary } from './ClaimSummary';
 
 export const ClaimButton = (props: { claimant: string }) => {
-  const [claimedCards, setClaimedCards] = useState<{ code: string }[] | undefined>();
+  const [claimedCards, setClaimedCards] = useState<{ code: string }[]>();
 
   const cbQuery = usePackClaimableBalances({ claimant: props.claimant });
 
   const { claim, error, reset, isPending } = useClaim({
     pubkey: props.claimant,
     records: cbQuery.data ?? [],
-    onSuccess: () => {
-      setClaimedCards(cbQuery.data);
-    },
+    onSuccess: (data) => setClaimedCards(data),
   });
 
   if (cbQuery.isError) return <div>Failed to load claimable balances</div>;

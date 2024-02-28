@@ -7,19 +7,32 @@ import {
 import { useWallet } from './useWallet';
 import { useQueryClient } from '@tanstack/react-query';
 
+/*
+100 available operations
+2 used for sponsoring reserves
+2 used per claimable balance (1 for changing trust, 1 for claiming)
+100 = 2 + 2 * MAX_CLAIMABLE_BALANCES
+*/
+const MAX_CLAIMABLE_BALANCES = 49;
+
 type UseClaimOptions = {
   pubkey: string;
   records: ExtendedClaimableBalance[];
-  onSuccess?: () => void;
+  onSuccess?: (data: ExtendedClaimableBalance[]) => void;
 };
 
 export const useClaim = (options: UseClaimOptions) => {
+  const claimableCards = options.records.slice(0, MAX_CLAIMABLE_BALANCES);
+
   const { kit } = useWallet();
   const queryClient = useQueryClient();
 
   const _bumpFee = useBumpTransactionFee();
   const _submit = useSubmitTransaction();
-  const _claim = useClaimClaimableBalances({ pubkey: options.pubkey, records: options.records });
+  const _claim = useClaimClaimableBalances({
+    pubkey: options.pubkey,
+    records: claimableCards,
+  });
 
   const isPending = _claim.isPending || _bumpFee.isPending || _submit.isPending;
   const error = _claim.error || _bumpFee.error || _submit.error;
@@ -39,7 +52,7 @@ export const useClaim = (options: UseClaimOptions) => {
 
     await _submit.mutateAsync({ xdr });
 
-    options.onSuccess?.();
+    options.onSuccess?.(claimableCards);
 
     queryClient.invalidateQueries({
       queryKey: ['horizon', 'list', 'claimable_balances'],

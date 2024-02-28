@@ -19,6 +19,7 @@ export const listClaimableBalances = (
 
   if (options.sponsor) url.searchParams.set('sponsor', options.sponsor);
   if (options.claimant) url.searchParams.set('claimant', options.claimant);
+  url.searchParams.set('limit', '200');
 
   return fetch(url).then(handleResponse);
 };
