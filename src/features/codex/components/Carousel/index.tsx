@@ -59,8 +59,8 @@ export const Carousel = (props: CarouselProps) => {
             {window.map((card, index) => {
               return (
                 <motion.img
-                  key={card.src}
-                  src={card.src}
+                  key={card.image}
+                  src={card.image}
                   transition={{ duration: 1, type: 'spring' }}
                   animate={itemStyle[index]}
                   style={{
@@ -86,7 +86,7 @@ export const Carousel = (props: CarouselProps) => {
           </div>
 
           <p className="mt-9 max-w-[36rem] text-neutral-white text-body-lg flex-1 min-h-[16rem] md:min-h-[12rem]">
-            {cardData[selectedIndex].description}
+            {cardData[selectedIndex].desc}
           </p>
 
           <div className="mt-10 md:mt-12 flex gap-4">

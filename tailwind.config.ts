@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       aspectRatio: {
-        card: '0.67',
+        card: '0.667',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

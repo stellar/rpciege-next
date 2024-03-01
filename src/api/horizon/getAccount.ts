@@ -15,12 +15,12 @@ export const getAccount = ({ publicKey }: GetAccountOptions): Promise<Account> =
 };
 
 export const useGetAccount = <SelectType = Account>(
-  options: GetAccountOptions & { select?: (data: Account) => SelectType }
+  options: GetAccountOptions & { enabled?: boolean; select?: (data: Account) => SelectType }
 ) => {
   return useQuery({
     queryKey: ['horizon', 'account', options],
     queryFn: () => getAccount(options),
-    enabled: !!options.publicKey,
+    enabled: !!options.publicKey && options.enabled,
     select: options.select,
   });
 };

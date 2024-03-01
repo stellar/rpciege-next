@@ -1,4 +1,4 @@
-import { Card } from '@/types/card';
+import { CardMetadata } from '@/types/card';
 
 import styles from './styles.module.css';
 import clsx from 'clsx';
@@ -27,7 +27,7 @@ export const BinderRowView = (props: BinderRowViewProps) => {
   );
 };
 
-type BinderRowProps = { card: Card } & React.ComponentPropsWithoutRef<'tr'>;
+type BinderRowProps = { card: CardMetadata } & React.ComponentPropsWithoutRef<'tr'>;
 
 export const BinderRow = (props: BinderRowProps) => {
   const { card, ...restProps } = props;
@@ -36,13 +36,13 @@ export const BinderRow = (props: BinderRowProps) => {
     <tr {...restProps}>
       <td>
         <div className="flex gap-4 items-center">
-          <img src={card.src} className="w-12 max-md:hidden rounded" width={48} height={72} />
+          <img src={card.image} className="w-12 max-md:hidden rounded" width={48} height={72} />
           {card.name}
         </div>
       </td>
       <td>{card.power}</td>
       <td>{card.modifier}</td>
-      <td>{card.pack}</td>
+      {/* <td>{card.pack}</td> */}
     </tr>
   );
 };

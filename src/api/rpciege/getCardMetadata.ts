@@ -1,18 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
+
+import { CardMetadata } from '@/types/card';
+
 import { handleResponse } from '..';
 
 type GetCardMetadataOptions = {
   code: string;
-};
-
-export type CardMetadata = {
-  code: string;
-  name: string;
-  desc: string;
-  power: number;
-  modifier: number;
-  image: string;
-  video: string;
 };
 
 const getCardMetadata = async (options: GetCardMetadataOptions): Promise<CardMetadata> => {

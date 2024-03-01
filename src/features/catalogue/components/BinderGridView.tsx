@@ -31,7 +31,7 @@ export const BinderGridView = (props: BinderGridViewProps) => {
         />
       </div>
 
-      <div className="px-2 grid grid-cols-fit-36 gap-x-5 gap-y-3 self-start lg:hidden">
+      <div className="grid grid-cols-fit-36 gap-x-5 gap-y-3 self-start lg:hidden">
         {props.children}
       </div>
     </>

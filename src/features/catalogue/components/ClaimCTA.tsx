@@ -3,6 +3,9 @@ import clsx from 'clsx';
 
 import { routes } from '@/constants';
 
+import { useWallet } from '@/hooks/useWallet';
+import { usePackClaimableBalances } from '@/hooks/usePackClaimableBalances';
+
 import { Link } from '@/components/Link';
 
 import cardFrame from '@/assets/marketing/card-frame.png';
@@ -11,6 +14,11 @@ import paperTexture from '@/assets/paper-texture.png';
 type ClaimCTAProps = React.ComponentPropsWithoutRef<'div'>;
 
 export const ClaimCTA = (props: ClaimCTAProps) => {
+  const { publicKey } = useWallet();
+  const cbQuery = usePackClaimableBalances({ claimant: publicKey });
+
+  if (cbQuery.isPending || cbQuery.isError || cbQuery.data.length === 0) return null;
+
   return (
     <div
       {...props}

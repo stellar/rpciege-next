@@ -2,10 +2,8 @@ import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation';
 
-import { CardPack, CardType } from '@/types/card';
-
 export type Sort = 'name' | 'power' | 'modifier';
-export type FilterParams = { pack?: CardPack; type?: CardType; sort?: Sort };
+export type FilterParams = { pack?: any; type?: any; sort?: Sort };
 
 export function useFilterParams() {
   const router = useRouter();
@@ -20,8 +18,8 @@ export function useFilterParams() {
   };
 
   const params = useMemo(() => {
-    const pack = searchParams.has('pack') ? (searchParams.get('pack') as CardPack) : undefined;
-    const type = searchParams.has('type') ? (searchParams.get('type') as CardType) : undefined;
+    const pack = searchParams.has('pack') ? (searchParams.get('pack') as any) : undefined;
+    const type = searchParams.has('type') ? (searchParams.get('type') as any) : undefined;
     const sort = searchParams.has('sort') ? (searchParams.get('sort') as Sort) : undefined;
 
     return filterUndefined({

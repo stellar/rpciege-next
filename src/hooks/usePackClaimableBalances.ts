@@ -4,9 +4,7 @@ import {
 } from '@/api/horizon/listClaimableBalances';
 import { PACK_SPONSOR } from '@/constants/accounts';
 
-type UsePackClaimableBalancesOptions = Pick<UseListClaimableBalancesOptions, 'claimant'>;
-
-export const usePackClaimableBalances = (options: UsePackClaimableBalancesOptions) => {
+export const usePackClaimableBalances = (options: UseListClaimableBalancesOptions) => {
   const query = useListClaimableBalances({
     ...options,
     sponsor: PACK_SPONSOR,

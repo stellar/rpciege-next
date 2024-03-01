@@ -1,13 +1,9 @@
-export type CardPack = 'Midnight Madness';
-export type CardType = 'Land' | 'Space';
-
-export type Card = {
-  src: string;
+export type CardMetadata = {
+  code: string;
   name: string;
-  description: string;
-  backstory: string;
+  desc: string;
   power: number;
   modifier: number;
-  pack: CardPack;
-  type: CardType;
+  image: string;
+  video: string;
 };

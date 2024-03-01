@@ -24,12 +24,14 @@ const LINKS: Link[] = [
   },
 ];
 
-export const BinderTabs = () => {
+type BinderTabsProps = React.ComponentPropsWithoutRef<'div'>;
+
+export const BinderTabs = (props: BinderTabsProps) => {
   return (
-    <>
+    <div {...props}>
       <MobileBinderTabs links={LINKS} className="lg:hidden" />
       <DesktopBinderTabs links={LINKS} className="max-lg:hidden" />
-    </>
+    </div>
   );
 };
 

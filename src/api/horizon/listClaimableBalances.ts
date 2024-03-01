@@ -36,6 +36,9 @@ export const useListClaimableBalances = <T = ListClaimableBalancesResponse>(
     queryKey: ['horizon', 'list', 'claimable_balances', options],
     queryFn: () => listClaimableBalances(options),
     select: options.select,
-    enabled: !!options.claimant && !!options.sponsor,
+    // Sometimes these dependencies are async so they can be undefined even though their key was passed in.
+    // This is to prevent the query from executing before all dependencies are available.
+    enabled:
+      'claimant' in options === !!options.claimant && 'sponsor' in options === !!options.sponsor,
   });
 };
