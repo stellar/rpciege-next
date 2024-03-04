@@ -1,6 +1,6 @@
 import { Link, LinkProps } from '../Link';
 
-type BulletinBoardCardProps = {
+export type BulletinBoardCardProps = {
   date: string;
   title: string;
 } & LinkProps;
