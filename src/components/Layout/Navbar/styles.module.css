@@ -1,0 +1,10 @@
+.MobileMenu {
+  > button,
+  > a {
+    @apply w-full flex items-center gap-2 font-nanum font-bold px-[22px] py-[19.5px] text-neutral-gray uppercase;
+  }
+}
+
+.SignInButton {
+  @apply h-full font-nanum font-bold uppercase flex items-center px-7.5 gap-2 text-h6;
+}
