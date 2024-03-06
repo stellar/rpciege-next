@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { Link } from '@/components/Link';
 import { Popover } from '@headlessui/react';
@@ -47,34 +48,47 @@ export const Navbar = () => {
   );
 };
 
-const menuLinkStyle =
-  'flex gap-2 items-center text-center uppercase font-nanum font-bold px-11 text-neutral-gray';
-
 const bulletinItems: BulletinBoardCardProps[] = [
   { date: 'December 31st', title: 'Siege 5, Skirmishes 11-14: Space Continuum', href: '/siege-5' },
 ];
 
 const DesktopMenu = () => {
   return (
-    <div className="hidden lg:flex divide-x divide-neutral-gray border-x border-neutral-gray">
-      <Link href={routes.GETTING_STARTED} className={menuLinkStyle}>
-        Get Started
-      </Link>
+    <div
+      className={clsx(
+        'hidden lg:flex divide-x divide-neutral-gray border-x border-neutral-gray',
+        styles.DesktopMenu
+      )}
+    >
+      <Link href={routes.GETTING_STARTED}>Get Started</Link>
+      <Link href={routes.CODEX}>Codex</Link>
+      <Link href={routes.GIVEWAY}>Giveaway</Link>
 
-      <Link href={routes.CODEX} className={menuLinkStyle}>
-        Codex
-      </Link>
-
-      <Link href={routes.GIVEWAY} className={menuLinkStyle}>
-        Giveaway
-      </Link>
-
-      {/* <BulletinBoardDropdown className={menuLinkStyle}>
+      {/* <BulletinBoardDropdown >
         {bulletinItems.map((item) => (
           <BulletinBoardCard {...item} />
         ))}
       </BulletinBoardDropdown> */}
     </div>
+  );
+};
+
+const MenuLink = (props: React.ComponentPropsWithoutRef<typeof Link>) => {
+  const router = useRouter();
+
+  const pathname = typeof props.href === 'string' ? props.href : props.href.pathname;
+
+  const isActive = router.pathname.includes(pathname ?? '');
+
+  return (
+    <Popover.Button
+      {...props}
+      as={Link}
+      className={clsx(
+        'relative',
+        isActive && 'after:absolute after:inset-y-0 after:left-0 after:w-1 after:bg-primary-red'
+      )}
+    />
   );
 };
 
@@ -92,20 +106,12 @@ const MobileMenu = () => {
         <Popover.Panel
           className={clsx(
             'absolute inset-x-0 top-14 bg-neutral-white shadow-2xl divide-y divide-neutral-gray border-b border-neutral-gray z-50',
-            styles.MobileMenu
+            styles.DropdownMenu
           )}
         >
-          <Popover.Button as={Link} href={routes.GETTING_STARTED}>
-            Get Started
-          </Popover.Button>
-
-          <Popover.Button as={Link} href={routes.CODEX}>
-            Codex
-          </Popover.Button>
-
-          <Popover.Button as={Link} href={routes.GIVEWAY}>
-            Giveaway
-          </Popover.Button>
+          <MenuLink href={routes.GETTING_STARTED}>Get Started</MenuLink>
+          <MenuLink href={routes.CODEX}>Codex</MenuLink>
+          <MenuLink href={routes.GIVEWAY}>Giveaway</MenuLink>
 
           {/* <BulletinBoardDisclosure>
             {bulletinItems.map((item) => (
@@ -115,10 +121,7 @@ const MobileMenu = () => {
 
           {wallet.publicKey ? (
             <>
-              <Popover.Button as={Link} href={routes.MY_CARDS}>
-                My Cards
-              </Popover.Button>
-
+              <MenuLink href={routes.MY_CARDS}>My Cards</MenuLink>
               <button onClick={() => wallet.disconnect()}>Disconnect</button>
             </>
           ) : (
@@ -153,11 +156,13 @@ const SignInButton = () => {
                   <Caret className={clsx('transition-transform size-3 ', open && 'rotate-180')} />
                 </Popover.Button>
 
-                <Popover.Panel className="w-full max-w-[14rem] absolute top-full right-0 bg-neutral-white z-50 border border-black text-h6 font-nanum *:px-6 *:py-4 *:block *:w-full *:text-left *:text-neutral-gray *:uppercase">
-                  <Popover.Button as={Link} href={routes.MY_CARDS}>
-                    My Cards
-                  </Popover.Button>
-
+                <Popover.Panel
+                  className={clsx(
+                    'w-full max-w-[14rem] absolute top-full right-0 bg-neutral-white z-50 border border-black text-h6 font-nanum',
+                    styles.DropdownMenu
+                  )}
+                >
+                  <MenuLink href={routes.MY_CARDS}>My Cards</MenuLink>
                   <button onClick={() => wallet.disconnect()}>Disconnect</button>
                 </Popover.Panel>
               </>

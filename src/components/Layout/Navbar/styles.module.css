@@ -1,4 +1,10 @@
-.MobileMenu {
+.DesktopMenu {
+  > a {
+    @apply flex gap-2 items-center text-center uppercase font-nanum font-bold px-11 text-neutral-gray;
+  }
+}
+
+.DropdownMenu {
   > button,
   > a {
     @apply w-full flex items-center gap-2 font-nanum font-bold px-[22px] py-[19.5px] text-neutral-gray uppercase;
