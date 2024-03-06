@@ -1,6 +1,7 @@
 import { Binder, MyCardsProvider } from '@/features/catalogue';
 import { useWallet } from '@/hooks/useWallet';
 
+// TODO: add message for when user has no cards
 export default function Cards() {
   const { publicKey } = useWallet();
 
