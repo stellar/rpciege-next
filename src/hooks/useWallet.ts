@@ -48,6 +48,8 @@ export const useWallet = () => {
       publicKey,
       selectedWalletId: options?.walletId ?? oldState.selectedWalletId,
     }));
+
+    return publicKey;
   };
 
   const disconnect = () => {

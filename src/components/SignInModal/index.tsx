@@ -9,9 +9,10 @@ import { Close, PulseLoader } from '../Icons';
 type SignInModalProps = React.ComponentPropsWithoutRef<'div'> &
   React.ComponentPropsWithoutRef<typeof Dialog> & {
     onClose?: () => void;
+    onConnect?: (publicKey: string) => void;
   };
 
-export const SignInModal = (props: SignInModalProps) => {
+export const SignInModal = ({ onClose, onConnect, ...props }: SignInModalProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [supportedWallets, setSupportedWallets] = useState<ISupportedWallet[]>([]);
 
@@ -31,14 +32,14 @@ export const SignInModal = (props: SignInModalProps) => {
   }, []);
 
   return (
-    <Dialog {...props}>
+    <Dialog {...props} onClose={onClose}>
       <div className="fixed inset-0 w-screen overflow-y-auto bg-black/50">
         <div className="flex min-h-full items-center justify-center p-4">
           <Dialog.Panel className="flex-1 max-w-xl p-4 md:p-7.5 bg-neutral-black rounded-md text-neutral-white">
             <div className="flex gap-4 items-center justify-between">
               <h4 className="text-neutral-white text-balance">Connect a wallet to continue</h4>
 
-              <button onClick={props.onClose as any}>
+              <button onClick={onClose as any}>
                 <Close className="size-8" />
               </button>
             </div>
@@ -49,9 +50,9 @@ export const SignInModal = (props: SignInModalProps) => {
                   <button
                     key={wallet.name}
                     className="w-full flex items-center gap-4 p-4 bg-neutral-gray rounded-md font-nanum disabled:opacity-50 disabled:cursor-not-allowed"
-                    onClick={() => {
-                      props.onClose?.();
-                      connect({ walletId: wallet.id as any });
+                    onClick={async () => {
+                      onClose?.();
+                      connect({ walletId: wallet.id as any }).then(onConnect);
                     }}
                     disabled={!wallet.isAvailable}
                   >

@@ -12,11 +12,11 @@ export const ErrorCard = ({ error, ...props }: ErrorCardProps) => {
   const errorString = JSON.stringify(error, null, 2);
 
   return (
-    <div {...props} className={clsx('space-y-4', props.className)}>
-      <h4>Error!</h4>
+    <div {...props} className={clsx('space-y-4 text-neutral-white', props.className)}>
+      <p className="text-h4 font-capitolina">Error!</p>
 
       <pre
-        className="w-full p-6 border-2 border-neutral-gray flex-1 max-h-96 text-xs leading-6 overflow-auto rounded"
+        className="w-full p-6 border-2 border-primary-red flex-1 max-h-96 text-xs leading-6 overflow-auto rounded"
         dangerouslySetInnerHTML={{
           __html: errorString,
         }}

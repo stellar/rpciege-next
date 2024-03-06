@@ -46,7 +46,10 @@ export const useClaim = (options: UseClaimOptions) => {
   const claim = async () => {
     const { token, xdr: xdrInner } = await _claim.mutateAsync();
 
-    const { result: signedXdr } = await kit.signTx({ xdr: xdrInner } as any);
+    const { result: signedXdr } = await kit.signTx({
+      xdr: xdrInner,
+      publicKeys: [options.pubkey],
+    } as any);
 
     const { xdr } = await _bumpFee.mutateAsync({ token, tx: signedXdr });
 

@@ -24,7 +24,7 @@ import fca00cTv from '@/assets/marketing/fca00c-tv.png';
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden isolate">
       <Banner />
       <ShapeTheFuture />
       <GatherYourArmy />

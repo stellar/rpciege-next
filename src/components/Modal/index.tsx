@@ -12,7 +12,7 @@ export const Modal = ({ children, ...props }: ModalProps) => {
 
       <div className="fixed inset-0 w-screen overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-4">
-          <Dialog.Panel className="mx-auto max-w-lg w-full">
+          <Dialog.Panel className="mx-auto max-w-xl w-full">
             <button
               className="block ml-auto mb-2"
               onClick={props.onClose as any}
@@ -21,7 +21,7 @@ export const Modal = ({ children, ...props }: ModalProps) => {
               <Close className="size-8 text-neutral-white" />
             </button>
 
-            <div className="overflow-y-auto p-8 bg-neutral-white">{children}</div>
+            <div className="overflow-y-auto p-8 bg-neutral-black rounded-xl">{children}</div>
           </Dialog.Panel>
         </div>
       </div>

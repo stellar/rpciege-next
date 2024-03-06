@@ -63,7 +63,10 @@ export const ClaimablePack = (props: ClaimablePackProps) => {
         onClick={() => {
           claim.mutate(undefined, {
             onSuccess: async ({ token, xdr: xdrInner }) => {
-              const { result: signedXdr } = await kit.signTx({ xdr: xdrInner } as any);
+              const { result: signedXdr } = await kit.signTx({
+                xdr: xdrInner,
+                publicKeys: [pubkey],
+              } as any);
 
               const { xdr } = await bumpFee.mutateAsync({
                 token,

@@ -153,7 +153,7 @@ const SignInButton = () => {
                   <Caret className={clsx('transition-transform size-3 ', open && 'rotate-180')} />
                 </Popover.Button>
 
-                <Popover.Panel className="w-full max-w-[14rem] absolute top-full right-0 bg-neutral-white z-50 border border-black text-h6 font-nanum *:px-6 *:py-4 *:block *:w-full *:text-left *:text-neutral-gray">
+                <Popover.Panel className="w-full max-w-[14rem] absolute top-full right-0 bg-neutral-white z-50 border border-black text-h6 font-nanum *:px-6 *:py-4 *:block *:w-full *:text-left *:text-neutral-gray *:uppercase">
                   <Popover.Button as={Link} href={routes.MY_CARDS}>
                     My Cards
                   </Popover.Button>
