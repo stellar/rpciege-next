@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { useClaim } from '@/hooks/useClaim';
 import { usePackClaimableBalances } from '@/hooks/usePackClaimableBalances';
 
@@ -7,17 +5,18 @@ import { Button } from '@/components/Button';
 import { ErrorCard } from '@/components/Error/ErrorCard';
 import { Modal } from '@/components/Modal';
 
-import { ClaimSummary } from './ClaimSummary';
+type ClaimButtonProps = {
+  claimant: string;
+  onSuccess?: (data: { code: string }[]) => void;
+};
 
-export const ClaimButton = (props: { claimant: string }) => {
-  const [claimedCards, setClaimedCards] = useState<{ code: string }[]>();
-
-  const cbQuery = usePackClaimableBalances({ claimant: props.claimant });
+export const ClaimButton = ({ claimant, onSuccess }: ClaimButtonProps) => {
+  const cbQuery = usePackClaimableBalances({ claimant });
 
   const { claim, error, reset, isPending } = useClaim({
-    pubkey: props.claimant,
+    pubkey: claimant,
     records: cbQuery.data ?? [],
-    onSuccess: (data) => setClaimedCards(data),
+    onSuccess,
   });
 
   if (cbQuery.isError) return <div>Failed to load claimable balances</div>;
@@ -41,15 +40,6 @@ export const ClaimButton = (props: { claimant: string }) => {
       <Modal open={!!error} onClose={reset}>
         <ErrorCard error={error} />
       </Modal>
-
-      {claimedCards && claimedCards?.length > 0 ? (
-        <ClaimSummary
-          cards={claimedCards}
-          claimant={props.claimant}
-          onClose={() => setClaimedCards(undefined)}
-          open
-        />
-      ) : null}
     </div>
   );
 };

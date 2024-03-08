@@ -7,21 +7,32 @@ import { SignInModal } from '@/components/SignInModal';
 
 import claimBanner from '@/assets/marketing/claim-banner.png';
 
-import { ClaimButton } from '@/features/claim';
+import { ClaimButton, ClaimSummary } from '@/features/claim';
 
 export default function Claim() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden pt-6 pb-20 md:pb-32">
       <ClaimBanner />
     </main>
   );
 }
 
 const ClaimBanner = () => {
-  const wallet = useWallet();
+  const { publicKey } = useWallet();
+  const [claimedCards, setClaimedCards] = useState<{ code: string }[]>();
+
+  if (publicKey && claimedCards && claimedCards?.length > 0)
+    return (
+      <ClaimSummary
+        className="max-w-max mx-auto"
+        cards={claimedCards}
+        claimant={publicKey}
+        onClose={() => setClaimedCards(undefined)}
+      />
+    );
 
   return (
-    <div className="pt-6 pb-20 md:pb-32">
+    <div>
       <div className="relative grid md:grid-cols-[1fr_auto] max-w-[90rem] mx-auto items-center">
         <Image
           src={claimBanner}
@@ -41,7 +52,11 @@ const ClaimBanner = () => {
             </p>
 
             <div className="mt-10 md:mt-20">
-              {wallet.publicKey ? <ClaimButton claimant={wallet.publicKey} /> : <ConnectButton />}
+              {publicKey ? (
+                <ClaimButton claimant={publicKey} onSuccess={(data) => setClaimedCards(data)} />
+              ) : (
+                <ConnectButton />
+              )}
             </div>
           </div>
         </div>
