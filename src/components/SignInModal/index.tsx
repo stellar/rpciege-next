@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
-import { ISupportedWallet } from '@creit.tech/stellar-wallets-kit';
+import { ISupportedWallet } from '@creit.tech/stellar-wallets-kit/build/index';
 import Image from 'next/image';
 
 import { useWallet } from '@/hooks/useWallet';

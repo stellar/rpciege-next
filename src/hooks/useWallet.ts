@@ -5,7 +5,7 @@ import {
   FreighterModule,
   ALBEDO_ID,
   FREIGHTER_ID,
-} from '@creit.tech/stellar-wallets-kit/build/main/index';
+} from '@creit.tech/stellar-wallets-kit/build/index';
 import { useLocalStorage } from '@mantine/hooks';
 import { useEffect } from 'react';
 
