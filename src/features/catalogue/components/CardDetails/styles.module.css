@@ -1,0 +1,11 @@
+.CardDetails__table {
+  @apply w-full;
+
+  th {
+    @apply px-4 py-2 text-left bg-neutral-gray text-neutral-white text-body-lg font-bold border-b border-r border-neutral-white w-0;
+  }
+
+  td {
+    @apply px-4 py-2 text-left text-body-lg border border-neutral-gray;
+  }
+}

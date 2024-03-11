@@ -1,0 +1,12 @@
+.Footer {
+  a {
+    @apply text-neutral-gray;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Divider:nth-child(4n) {
+    flex-basis: 100%;
+    border: none;
+  }
+}

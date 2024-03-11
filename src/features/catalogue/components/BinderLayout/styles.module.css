@@ -1,0 +1,15 @@
+.BinderLayoutBase {
+  @apply mb-20 lg:mb-44 lg:mt-20 grid gap-7.5;
+
+  grid-template-areas:
+    'content'
+    'pagination';
+
+  @screen lg {
+    grid-template-columns: 2fr 1fr;
+
+    grid-template-areas:
+      'content side-panel'
+      'pagination .';
+  }
+}

@@ -1,0 +1,11 @@
+.PamphletPage {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #fff 2.5%,
+    #f1eee4 2.75%,
+    #f1eee4 3%,
+    #fff 3.25%,
+    #f1eee4 3.5%
+  );
+}

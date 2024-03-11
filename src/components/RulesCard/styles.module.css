@@ -1,0 +1,3 @@
+:where(.RulesCard) {
+  @apply relative p-7;
+}

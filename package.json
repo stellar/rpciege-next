@@ -1,0 +1,36 @@
+{
+  "name": "rpciege-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages"
+  },
+  "dependencies": {
+    "@creit.tech/stellar-wallets-kit": "^0.5.0",
+    "@headlessui/react": "^1.7.17",
+    "@mantine/hooks": "^7.5.1",
+    "@stellar/stellar-base": "^11.0.0",
+    "@tanstack/react-query": "^5.20.5",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.17.9",
+    "next": "14.0.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "toml": "^3.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.10.0",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5"
+  }
+}

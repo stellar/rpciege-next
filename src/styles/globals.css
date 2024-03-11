@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .heading-outline {
+    text-shadow: 0.03em 0.03em 0.55px #292827;
+    -webkit-text-stroke: 0.01em #f1eee4;
+  }
+
+  .drop-cap {
+    @apply mr-2 font-capitolina text-primary-red text-h2 leading-[0.8] float-left heading-outline;
+  }
+
+  .bg-checkerboard {
+    background: repeating-conic-gradient(
+      #f1eee4 0% 25%,
+      transparent 0% 50%,
+      #f1eee4 0% 75%,
+      transparent 0% 100%
+    );
+    background-size: 14.5px 14.5px;
+  }
+
+  .bg-checkerboard-red {
+    background: repeating-conic-gradient(
+      #e94f2d 0% 25%,
+      transparent 0% 50%,
+      #e94f2d 0% 75%,
+      transparent 0% 100%
+    );
+    background-size: 14.5px 14.5px;
+  }
+
+  .border-decoration {
+    border-image-source: url('/assets/frame.png');
+    border-image-slice: 127;
+  }
+}
+
+@layer components {
+  @import url('./components/button.css');
+  @import url('./components/table.css');
+}
+
+@layer base {
+  h1,
+  h2,
+  h1 > *,
+  h2 > * {
+    @apply heading-outline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-capitolina;
+  }
+
+  h1,
+  h1 > * {
+    @apply text-primary-red text-h1 lg:text-h1-lg;
+  }
+
+  h2,
+  h2 > * {
+    @apply text-primary-red text-h2;
+  }
+
+  h3 {
+    @apply text-neutral-black text-h3 lg:text-h3-lg;
+  }
+
+  h4 {
+    @apply text-neutral-black text-h4;
+  }
+
+  h5 {
+    @apply text-neutral-black text-h5;
+  }
+
+  h6 {
+    @apply text-neutral-gray text-h6 uppercase;
+  }
+
+  body {
+    @apply font-merriweather text-body text-neutral-gray bg-neutral-white;
+  }
+
+  a {
+    @apply text-primary-red;
+  }
+}

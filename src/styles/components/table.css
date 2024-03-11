@@ -1,0 +1,19 @@
+.table-pamphlet {
+  @apply text-left text-body-lg max-sm:font-capitolina;
+
+  thead {
+    @apply bg-neutral-gray border border-neutral-gray;
+  }
+
+  th {
+    @apply text-body text-neutral-white font-normal p-2;
+  }
+
+  td {
+    @apply p-2 sm:p-3 border border-neutral-gray;
+
+    &:first-child {
+      @apply text-center;
+    }
+  }
+}
