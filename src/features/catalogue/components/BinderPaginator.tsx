@@ -16,7 +16,10 @@ export const BinderPaginator = (props: BinderPaginatorProps) => {
   if (pagination.range.length === 0) return null;
 
   return (
-    <div {...props} className={clsx('grid grid-cols-3 max-w-max gap-4', props.className)}>
+    <div
+      {...props}
+      className={clsx('grid grid-cols-[1rem_1fr_1rem] max-w-max gap-4', props.className)}
+    >
       {!isFirstPage && isMultiPage ? (
         <button onClick={pagination.previous} className="justify-self-end">
           <ArrowRight className="rotate-180" />

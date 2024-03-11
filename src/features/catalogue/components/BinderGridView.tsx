@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 import binderRings from '../assets/binder-rings.svg';
 import binderSpine from '../assets/binder-spine.svg';
@@ -8,7 +9,7 @@ import { BinderPage } from './BinderPage';
 
 type BinderGridViewProps = { children?: React.ReactNode };
 
-export const BinderGridView = (props: BinderGridViewProps) => {
+const BinderGridViewBase = (props: BinderGridViewProps) => {
   return (
     <>
       <div className="relative max-lg:hidden">
@@ -37,3 +38,30 @@ export const BinderGridView = (props: BinderGridViewProps) => {
     </>
   );
 };
+
+type ItemProps = { isActive?: boolean } & React.ComponentPropsWithoutRef<'img'>;
+
+const Item = ({ isActive, ...props }: ItemProps) => {
+  return (
+    <img
+      {...props}
+      className={clsx(
+        'rounded-md shadow-lg shadow-black/50 cursor-pointer w-full aspect-card object-cover bg-black',
+        isActive && 'outline outline-4 outline-primary-red',
+        props.className
+      )}
+    />
+  );
+};
+
+const Loader = () => {
+  return (
+    <BinderGridViewBase>
+      {Array.from({ length: 9 }, (_, index) => (
+        <div key={index} className="w-full aspect-card bg-black/20 animate-pulse" />
+      ))}
+    </BinderGridViewBase>
+  );
+};
+
+export const BinderGridView = Object.assign(BinderGridViewBase, { Item, Loader });

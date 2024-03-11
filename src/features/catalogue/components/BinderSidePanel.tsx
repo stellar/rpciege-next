@@ -7,7 +7,13 @@ type BinderSidePanelProps = {} & React.ComponentPropsWithoutRef<'div'>;
 // TODO: Implement search functionality
 export const BinderSidePanel = ({ children, ...props }: BinderSidePanelProps) => {
   return (
-    <div {...props} className={clsx('border border-neutral-gray rounded-md', props.className)}>
+    <div
+      {...props}
+      className={clsx(
+        '[grid-area:side-panel] border border-neutral-gray rounded-md max-lg:hidden',
+        props.className
+      )}
+    >
       {/* <label className="flex gap-2 items-center p-4 border-b border-neutral-gray">
         <Search />
 

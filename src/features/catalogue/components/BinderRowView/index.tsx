@@ -6,7 +6,7 @@ import React from 'react';
 
 type BinderRowViewProps = React.ComponentPropsWithoutRef<'table'>;
 
-export const BinderRowView = (props: BinderRowViewProps) => {
+const BinderRowViewBase = (props: BinderRowViewProps) => {
   return (
     <table {...props} className={clsx(styles.Binder__table, props.className)}>
       <thead>
@@ -27,9 +27,9 @@ export const BinderRowView = (props: BinderRowViewProps) => {
   );
 };
 
-type BinderRowProps = { card: CardMetadata } & React.ComponentPropsWithoutRef<'tr'>;
+type ItemProps = { card: CardMetadata } & React.ComponentPropsWithoutRef<'tr'>;
 
-export const BinderRow = (props: BinderRowProps) => {
+const Item = (props: ItemProps) => {
   const { card, ...restProps } = props;
 
   return (
@@ -46,3 +46,19 @@ export const BinderRow = (props: BinderRowProps) => {
     </tr>
   );
 };
+
+const Loader = () => {
+  return (
+    <BinderRowView>
+      {Array.from({ length: 9 }, (_, i) => (
+        <tr key={i}>
+          <td colSpan={4}>
+            <div className="rounded-md bg-black/20 animate-pulse h-10 md:h-20" />
+          </td>
+        </tr>
+      ))}
+    </BinderRowView>
+  );
+};
+
+export const BinderRowView = Object.assign(BinderRowViewBase, { Item, Loader });
