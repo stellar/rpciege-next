@@ -9,6 +9,7 @@ import {
 import { useWallet } from '@/hooks/useWallet';
 
 // TODO: add message for when user has no cards
+// TODO: handle error display
 export default function Cards() {
   return (
     <MyCardsProvider>

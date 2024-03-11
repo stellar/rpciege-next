@@ -49,8 +49,8 @@ const GridView = () => {
 
   return (
     <BinderGridView>
-      {cards.map((card) => {
-        if (!card) return <div className="w-full aspect-card bg-black/10" />;
+      {cards.map((card, index) => {
+        if (!card) return <div key={index} className="w-full aspect-card bg-black/10" />;
 
         return (
           <BinderGridView.Item
