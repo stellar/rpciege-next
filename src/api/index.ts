@@ -1,7 +1,11 @@
+import { IS_DEV } from '@/config';
+
 export const horizon = {
   TESTNET: 'https://horizon-testnet.stellar.org',
   PUBLIC: 'https://horizon.stellar.org',
 };
+
+export const HORIZON_API = IS_DEV ? horizon.TESTNET : horizon.PUBLIC;
 
 export const api = Object.freeze({
   RPCIEGE: ' https://api.rpciege.com',

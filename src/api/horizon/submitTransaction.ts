@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 
-import { handleResponse, horizon } from '..';
+import { HORIZON_API, handleResponse } from '..';
 
 type SubmitTransactionOptions = {
   xdr: string;
@@ -10,7 +10,7 @@ export const submitTransaction = (options: SubmitTransactionOptions): Promise<nu
   const body = new FormData();
   body.append('tx', options.xdr);
 
-  return fetch(`${horizon.TESTNET}/transactions`, {
+  return fetch(`${HORIZON_API}/transactions`, {
     method: 'POST',
     body,
   }).then(handleResponse);
