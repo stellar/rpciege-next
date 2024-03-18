@@ -8,6 +8,7 @@ import { QueryProvider } from '@/providers/QueryProvider';
 
 import { BaseLayout } from '@/components/Layout/BaseLayout';
 import { CookieConsent } from '@/components/CookieConsent';
+import { ErrorFallback } from '@/components/Error/ErrorFallback';
 import { SEO } from '@/components/SEO';
 
 const nanumGothicCoding = localFont({
@@ -28,7 +29,7 @@ const merriweather = Merriweather({ weight: ['400'], subsets: ['latin'], display
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ErrorFallback>
       <SEO />
 
       <style jsx global>{`
@@ -55,6 +56,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </QueryProvider>
 
       <CookieConsent />
-    </>
+    </ErrorFallback>
   );
 }
