@@ -6,6 +6,7 @@ import Script from 'next/script';
 
 import { BaseLayout } from '@/components/Layout/BaseLayout';
 import { QueryProvider } from '@/providers/QueryProvider';
+import { SEO } from '@/components/SEO';
 
 const nanumGothicCoding = localFont({
   src: [
@@ -26,6 +27,8 @@ const merriweather = Merriweather({ weight: ['400'], subsets: ['latin'], display
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <SEO />
+
       <style jsx global>{`
         html {
           --font-nanum: ${nanumGothicCoding.style.fontFamily};
