@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocalStorage } from '@mantine/hooks';
 import {
   StellarWalletsKit,
   WalletNetwork,
@@ -6,8 +8,8 @@ import {
   ALBEDO_ID,
   FREIGHTER_ID,
 } from '@creit.tech/stellar-wallets-kit/build/index';
-import { useLocalStorage } from '@mantine/hooks';
-import { useEffect } from 'react';
+
+import { IS_DEV } from '@/config';
 
 type WalletId = typeof ALBEDO_ID | typeof FREIGHTER_ID;
 
@@ -21,7 +23,7 @@ type ConnectOptions = {
 };
 
 const kit = new StellarWalletsKit({
-  network: WalletNetwork.TESTNET,
+  network: IS_DEV ? WalletNetwork.TESTNET : WalletNetwork.PUBLIC,
   selectedWalletId: ALBEDO_ID,
   modules: [new AlbedoModule(), new FreighterModule()],
 });
@@ -30,7 +32,6 @@ export const useWallet = () => {
   const [wallet, setWallet] = useLocalStorage<WalletMeta>({
     key: 'rpciege-wallet',
     defaultValue: {
-      publicKey: undefined,
       selectedWalletId: ALBEDO_ID,
     },
   });
@@ -53,10 +54,7 @@ export const useWallet = () => {
   };
 
   const disconnect = () => {
-    setWallet((oldState) => ({
-      ...oldState,
-      publicKey: undefined,
-    }));
+    setWallet(({ publicKey, ...oldState }) => oldState);
   };
 
   return { kit, connect, disconnect, ...wallet };
