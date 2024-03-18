@@ -4,8 +4,10 @@ import localFont from 'next/font/local';
 import { Merriweather } from 'next/font/google';
 import Script from 'next/script';
 
-import { BaseLayout } from '@/components/Layout/BaseLayout';
 import { QueryProvider } from '@/providers/QueryProvider';
+
+import { BaseLayout } from '@/components/Layout/BaseLayout';
+import { CookieConsent } from '@/components/CookieConsent';
 import { SEO } from '@/components/SEO';
 
 const nanumGothicCoding = localFont({
@@ -51,6 +53,8 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </BaseLayout>
       </QueryProvider>
+
+      <CookieConsent />
     </>
   );
 }
