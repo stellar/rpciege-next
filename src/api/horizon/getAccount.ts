@@ -1,17 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { IS_DEV } from '@/config';
 import { Account } from '@/types/horizon';
 
-import { handleResponse, horizon } from '..';
+import { HORIZON_API, handleResponse } from '..';
 
 type GetAccountOptions = {
   publicKey?: string;
 };
 
 export const getAccount = ({ publicKey }: GetAccountOptions): Promise<Account> => {
-  const url = IS_DEV ? horizon.TESTNET : horizon.PUBLIC;
-  return fetch(`${url}/accounts/${publicKey}`).then(handleResponse);
+  return fetch(`${HORIZON_API}/accounts/${publicKey}`).then(handleResponse);
 };
 
 export const useGetAccount = <SelectType = Account>(

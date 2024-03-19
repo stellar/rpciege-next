@@ -9,7 +9,7 @@ type ErrorCardProps = {
 export const ErrorCard = ({ error, ...props }: ErrorCardProps) => {
   const { copy, copied } = useClipboard({ timeout: 3000 });
 
-  const errorString = JSON.stringify(error, null, 2);
+  const errorString = JSON.stringify(error, Object.getOwnPropertyNames(error), 2);
 
   return (
     <div {...props} className={clsx('space-y-4 text-neutral-white', props.className)}>

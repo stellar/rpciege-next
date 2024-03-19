@@ -4,8 +4,12 @@ import localFont from 'next/font/local';
 import { Merriweather } from 'next/font/google';
 import Script from 'next/script';
 
-import { BaseLayout } from '@/components/Layout/BaseLayout';
 import { QueryProvider } from '@/providers/QueryProvider';
+
+import { BaseLayout } from '@/components/Layout/BaseLayout';
+import { CookieConsent } from '@/components/CookieConsent';
+import { ErrorFallback } from '@/components/Error/ErrorFallback';
+import { SEO } from '@/components/SEO';
 
 const nanumGothicCoding = localFont({
   src: [
@@ -25,7 +29,9 @@ const merriweather = Merriweather({ weight: ['400'], subsets: ['latin'], display
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ErrorFallback>
+      <SEO />
+
       <style jsx global>{`
         html {
           --font-nanum: ${nanumGothicCoding.style.fontFamily};
@@ -48,6 +54,8 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </BaseLayout>
       </QueryProvider>
-    </>
+
+      <CookieConsent />
+    </ErrorFallback>
   );
 }

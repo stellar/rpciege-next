@@ -1,9 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { IS_DEV } from '@/config';
 import { ClaimableBalance, HorizonResponse } from '@/types/horizon';
 
-import { handleResponse, horizon } from '..';
+import { HORIZON_API, handleResponse } from '..';
 
 type ListClaimableBalancesOptions = {
   sponsor?: string;
@@ -15,7 +14,7 @@ type ListClaimableBalancesResponse = HorizonResponse<ClaimableBalance>;
 export const listClaimableBalances = (
   options: ListClaimableBalancesOptions
 ): Promise<ListClaimableBalancesResponse> => {
-  const url = new URL(`${IS_DEV ? horizon.TESTNET : horizon.PUBLIC}/claimable_balances`);
+  const url = new URL(`${HORIZON_API}/claimable_balances`);
 
   if (options.sponsor) url.searchParams.set('sponsor', options.sponsor);
   if (options.claimant) url.searchParams.set('claimant', options.claimant);
