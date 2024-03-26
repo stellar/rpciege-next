@@ -96,8 +96,8 @@ const Collections = () => {
             <h5>RPCiege Vanilla</h5>
             <p className="mt-3 md:mt-5 text-body-lg">
               The first siege of RPCiege saw our heroes vanquish several evil overlords, instated by
-              the Syndicate of Scoundrels, that had been ruling over the realm’s territories with
-              tyranny and warfare for decades. 
+              the Dragons of Destiny, that had been ruling over the realm’s territories with tyranny
+              and warfare for decades. 
             </p>
           </RulesCard>
         </div>
