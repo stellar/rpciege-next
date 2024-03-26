@@ -275,7 +275,7 @@ const CollectingCards = () => {
         </div>
 
         <p className="max-w-[40rem] text-h5 mt-7 lg:mt-10 font-capitolina">
-          Read more about the characters and lore on our <Link href={routes.CODEX}>World page</Link>
+          Read more about the characters and lore on our <Link href={routes.CODEX}>Codex page</Link>
           .
         </p>
       </div>
