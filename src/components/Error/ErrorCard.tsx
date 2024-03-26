@@ -12,7 +12,7 @@ export const ErrorCard = ({ error, ...props }: ErrorCardProps) => {
   const errorString = JSON.stringify(error, Object.getOwnPropertyNames(error), 2);
 
   return (
-    <div {...props} className={clsx('space-y-4 text-neutral-white', props.className)}>
+    <div {...props} className={clsx('space-y-4', props.className)}>
       <p className="text-h4 font-capitolina">Error!</p>
 
       <pre

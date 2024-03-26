@@ -149,7 +149,7 @@ const GiveawayButton = (props: { className?: string }) => {
         Get Code
       </Button>
 
-      <Modal open={!!giveaway.data} onClose={giveaway.reset} className="text-neutral-white">
+      <Modal open={!!giveaway.data} onClose={giveaway.reset}>
         <p className="text-h4 font-capitolina">Congratulations!</p>
 
         <p className="mt-6 max-w-[28rem] text-body-lg md:text-h5 md:font-capitolina">
@@ -165,7 +165,7 @@ const GiveawayButton = (props: { className?: string }) => {
         </div>
       </Modal>
 
-      <Modal open={!!giveaway.error} onClose={giveaway.reset} className="text-neutral-white">
+      <Modal open={!!giveaway.error} onClose={giveaway.reset}>
         <p className="text-h4 font-capitolina">Dang!!</p>
 
         <p className="mt-6 max-w-[28rem] text-body-lg md:text-h5 md:font-capitolina">
