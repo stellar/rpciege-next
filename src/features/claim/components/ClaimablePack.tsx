@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useQueryClient } from '@tanstack/react-query';
 
-import { useWallet } from '@/hooks/useWallet';
+import { NETWORK, useWallet } from '@/hooks/useWallet';
 import { useBumpTransactionFee } from '@/api/rpciege/bumpTransactionFee';
 import { useSubmitTransaction } from '@/api/horizon/submitTransaction';
 import {
@@ -66,7 +66,8 @@ export const ClaimablePack = (props: ClaimablePackProps) => {
               const { result: signedXdr } = await kit.signTx({
                 xdr: xdrInner,
                 publicKeys: [pubkey],
-              } as any);
+                network: NETWORK,
+              });
 
               const { xdr } = await bumpFee.mutateAsync({
                 token,

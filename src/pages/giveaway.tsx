@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { IS_DEV } from '@/config';
 import { links } from '@/constants';
 
-import { useWallet } from '@/hooks/useWallet';
+import { NETWORK, useWallet } from '@/hooks/useWallet';
 import { useGetGiveawayCode } from '@/api/rpciege/getGiveawayCode';
 
 import { Button } from '@/components/Button';
@@ -114,7 +114,11 @@ const GiveawayButton = (props: { className?: string }) => {
       .build()
       .toXDR();
 
-    const { result: signedXdr } = await kit.signTx({ xdr, publicKeys: [publicKey] } as any);
+    const { result: signedXdr } = await kit.signTx({
+      xdr,
+      publicKeys: [publicKey],
+      network: NETWORK,
+    });
 
     giveaway.mutate({ pubkey: publicKey, xdr: signedXdr });
   };
