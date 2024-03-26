@@ -124,11 +124,6 @@ const Rules = () => {
           <span className="text-[8.77em] italic align-top mr-[0.3em] ">of</span>
           <span className="text-[12.93em] font-extrabold uppercase">Play</span>
         </h2>
-
-        <p className="text-center text-body-lg">
-          Learn about upcoming sieges by keeping an eye out for announcements in the coding games
-          channels in the Stellar Developer Discord or by following Soroban on Twitter.
-        </p>
       </div>
 
       <div className="mt-15 grid lg:grid-cols-3 gap-y-16 gap-x-8 max-w-sm lg:max-w-[62rem] mx-auto">
