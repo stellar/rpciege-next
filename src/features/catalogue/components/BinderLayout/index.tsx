@@ -10,15 +10,18 @@ import { BinderPaginator } from '../BinderPaginator';
 import { BinderRowView } from '../BinderRowView';
 import { BinderTabs } from '../BinderTabs';
 import { CardDetails } from '../CardDetails';
+import { ErrorCard } from '@/components/Error/ErrorCard';
 
 import styles from './styles.module.css';
 
 export const BinderLayout = (props: { children?: React.ReactNode }) => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 1024px)');
-  const { selectedCard, setSelectedCard } = useBinderContext();
+  const { selectedCard, setSelectedCard, error } = useBinderContext();
 
   return (
     <>
+      {error ? <ErrorCard error={error} className="my-8" /> : null}
+
       <div className={clsx(styles.BinderLayoutBase)}>
         <div className="[grid-area:content]">
           <BinderTabs className="max-lg:mb-9 max-lg:-mx-2" />

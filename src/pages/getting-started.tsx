@@ -124,11 +124,6 @@ const Rules = () => {
           <span className="text-[8.77em] italic align-top mr-[0.3em] ">of</span>
           <span className="text-[12.93em] font-extrabold uppercase">Play</span>
         </h2>
-
-        <p className="text-center text-body-lg">
-          Learn about upcoming sieges by keeping an eye out for announcements in the coding games
-          channels in the Stellar Developer Discord or by following Soroban on Twitter.
-        </p>
       </div>
 
       <div className="mt-15 grid lg:grid-cols-3 gap-y-16 gap-x-8 max-w-sm lg:max-w-[62rem] mx-auto">
@@ -280,7 +275,7 @@ const CollectingCards = () => {
         </div>
 
         <p className="max-w-[40rem] text-h5 mt-7 lg:mt-10 font-capitolina">
-          Read more about the characters and lore on our <Link href={routes.CODEX}>World page</Link>
+          Read more about the characters and lore on our <Link href={routes.CODEX}>Codex page</Link>
           .
         </p>
       </div>

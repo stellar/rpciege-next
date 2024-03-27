@@ -21,7 +21,9 @@ export const Modal = ({ children, ...props }: ModalProps) => {
               <Close className="size-8 text-neutral-white" />
             </button>
 
-            <div className="overflow-y-auto p-8 bg-neutral-black rounded-xl">{children}</div>
+            <div className="overflow-y-auto p-8 text-neutral-white bg-neutral-black rounded-xl">
+              {children}
+            </div>
           </Dialog.Panel>
         </div>
       </div>

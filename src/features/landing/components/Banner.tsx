@@ -41,13 +41,13 @@ const BannerBackground = () => {
         aria-hidden="true"
       />
 
-      <p className="absolute top-[3.5%] right-1/2 mr-[34rem] w-32 text-center text-body-lg">
-        A Stellar Community Game
-      </p>
+      <div className="absolute left-10 top-[3.5%] w-32 max-lg:hidden text-center">
+        <p className="text-body-lg">A Stellar Community Game</p>
 
-      <p className="absolute top-[20%] right-1/2 mr-[34rem] w-32 text-center text-neutral-white text-sm">
-        Clear <span className="text-nowrap">Step-By-Step</span> Rules
-      </p>
+        <p className="mt-20 text-neutral-white text-sm">
+          Clear <span className="text-nowrap">Step-By-Step</span> Rules
+        </p>
+      </div>
 
       <CardSleeve className="absolute rotate-12 -bottom-24 right-1/2 mr-[448px] max-sm:hidden">
         <Image src={vikingRaider} alt="" className="w-[291px] rounded-xl max-w-none" />

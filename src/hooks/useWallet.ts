@@ -22,6 +22,8 @@ type ConnectOptions = {
   walletId?: WalletId;
 };
 
+export const NETWORK = IS_DEV ? WalletNetwork.TESTNET : WalletNetwork.PUBLIC;
+
 export const useWallet = () => {
   const [wallet, setWallet] = useLocalStorage<WalletMeta>({
     key: 'rpciege-wallet',
@@ -32,7 +34,7 @@ export const useWallet = () => {
 
   const kit = useMemo(() => {
     return new StellarWalletsKit({
-      network: IS_DEV ? WalletNetwork.TESTNET : WalletNetwork.PUBLIC,
+      network: NETWORK,
       selectedWalletId: wallet.selectedWalletId,
       modules: [new AlbedoModule(), new FreighterModule()],
     });

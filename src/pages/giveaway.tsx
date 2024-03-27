@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { IS_DEV } from '@/config';
 import { links } from '@/constants';
 
-import { useWallet } from '@/hooks/useWallet';
+import { NETWORK, useWallet } from '@/hooks/useWallet';
 import { useGetGiveawayCode } from '@/api/rpciege/getGiveawayCode';
 
 import { Button } from '@/components/Button';
@@ -114,7 +114,11 @@ const GiveawayButton = (props: { className?: string }) => {
       .build()
       .toXDR();
 
-    const { result: signedXdr } = await kit.signTx({ xdr, publicKeys: [publicKey] } as any);
+    const { result: signedXdr } = await kit.signTx({
+      xdr,
+      publicKeys: [publicKey],
+      network: NETWORK,
+    });
 
     giveaway.mutate({ pubkey: publicKey, xdr: signedXdr });
   };
@@ -145,7 +149,7 @@ const GiveawayButton = (props: { className?: string }) => {
         Get Code
       </Button>
 
-      <Modal open={!!giveaway.data} onClose={giveaway.reset} className="text-neutral-white">
+      <Modal open={!!giveaway.data} onClose={giveaway.reset}>
         <p className="text-h4 font-capitolina">Congratulations!</p>
 
         <p className="mt-6 max-w-[28rem] text-body-lg md:text-h5 md:font-capitolina">
@@ -161,7 +165,7 @@ const GiveawayButton = (props: { className?: string }) => {
         </div>
       </Modal>
 
-      <Modal open={!!giveaway.error} onClose={giveaway.reset} className="text-neutral-white">
+      <Modal open={!!giveaway.error} onClose={giveaway.reset}>
         <p className="text-h4 font-capitolina">Dang!!</p>
 
         <p className="mt-6 max-w-[28rem] text-body-lg md:text-h5 md:font-capitolina">

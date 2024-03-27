@@ -4,7 +4,7 @@ import {
   ExtendedClaimableBalance,
   useClaimClaimableBalances,
 } from '@/api/rpciege/claimClaimableBalances';
-import { useWallet } from './useWallet';
+import { NETWORK, useWallet } from './useWallet';
 import { useQueryClient } from '@tanstack/react-query';
 
 /*
@@ -49,7 +49,8 @@ export const useClaim = (options: UseClaimOptions) => {
     const { result: signedXdr } = await kit.signTx({
       xdr: xdrInner,
       publicKeys: [options.pubkey],
-    } as any);
+      network: NETWORK,
+    });
 
     const { xdr } = await _bumpFee.mutateAsync({ token, tx: signedXdr });
 

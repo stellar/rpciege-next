@@ -9,6 +9,7 @@ import { QueryProvider } from '@/providers/QueryProvider';
 import { BaseLayout } from '@/components/Layout/BaseLayout';
 import { CookieConsent } from '@/components/CookieConsent';
 import { ErrorFallback } from '@/components/Error/ErrorFallback';
+import { GoogleTagManager } from '@/components/GoogleTagManager';
 import { SEO } from '@/components/SEO';
 
 const nanumGothicCoding = localFont({
@@ -48,6 +49,8 @@ export default function App({ Component, pageProps }: AppProps) {
         src="//js.hs-scripts.com/8130068.js"
       ></Script>
       {/* End of HubSpot Embed Code */}
+
+      <GoogleTagManager id="GTM-NG34QZS" />
 
       <QueryProvider>
         <BaseLayout>
