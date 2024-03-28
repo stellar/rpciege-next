@@ -15,6 +15,18 @@ const nextConfig = applyMiddleware(withSvgr)({
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  rewrites() {
+    return [
+      {
+        source: '/booklet',
+        destination: 'https://assets.rpciege.com/static/booklet.pdf',
+      },
+      {
+        source: '/booklet/:file',
+        destination: 'https://assets.rpciege.com/static/:file.pdf',
+      },
+    ];
+  },
 });
 
 module.exports = nextConfig;
