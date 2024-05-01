@@ -224,8 +224,7 @@ const Preparation = () => {
         <div className="mt-16 md:mt-9 grid gap-x-7.5 gap-y-9 max-w-4xl ml-auto md:grid-cols-2">
           <RulesCard>
             Always use our official RPC endpoint when enacting your attacks:
-            https://futurenet.rpciege.com:443, along with the `FUTURENET` network passphrase `Test
-            SDF Future Network ; October 2022`
+            https://testnet.rpciege.com, along with the `TESTNET` network passphrase `Test SDF Network ; September 2015`
           </RulesCard>
 
           <RulesCard>
@@ -353,8 +352,8 @@ const StellarNetwork = () => {
         <p className="mt-2.5 text-neutral-white max-w-xs text-center sm:max-w-[54rem] lg:text-h5 lg:font-capitolina">
           The Stellar network is a layer-1, open-source, decentralized blockchain network that
           provides the framework for developers to create applications, issue assets, and more. With
-          the addition of Soroban, the Stellar network now supports smart contracts on Futurenet and
-          Testnet!
+          the addition of Soroban, the Stellar network now supports smart contracts on Testnet and
+          Mainnet!
         </p>
       </div>
     </div>

@@ -36,7 +36,7 @@ const GiveawayBanner = () => {
 
           <p className="mt-10 first-line:text-h5 first-line:font-capitolina">
             <span className="drop-cap">R</span> PCiege booster packs are available to collect for
-            accomplished coders who have completed enough skirmishes to claim 20 NFT playing cards. 
+            accomplished coders who have completed enough skirmishes to claim 20 NFT playing cards.
           </p>
 
           <p className="mt-2">
@@ -62,7 +62,14 @@ const GiveawayBanner = () => {
 
       <div className="max-w-[87rem] px-4 mx-auto text-h6 font-nanum uppercase mt-6">
         <p>While supplies last</p>
-        <p>Something else legal will probably need to tell us</p>
+        <br />
+        <p>
+          By clicking “Connect Wallet”, you acknowledge and agree <br />
+          to abide by the Stellar Development Foundation’s <br />
+          <a href="https://fastcheapandoutofcontrol.com/rules/rpciege"
+          >RPCiege Official Rules</a
+          >, <a href="https://stellar.org/terms-of-service">Terms of Service</a>, and <a href="https://stellar.org/privacy-policy">Privacy Policy</a>.
+        </p>
       </div>
     </div>
   );
@@ -79,7 +86,7 @@ const MobileGiveawayBanner = () => {
         <Pamphlet.Content className="text-body-lg">
           <p className="first-line:text-h5 first-line:font-capitolina">
             <span className="drop-cap">R</span> PCiege booster packs are available to collect for
-            accomplished coders who have completed enough skirmishes to claim 20 NFT playing cards. 
+            accomplished coders who have completed enough skirmishes to claim 20 NFT playing cards.
           </p>
 
           <p className="mt-2">
@@ -91,7 +98,14 @@ const MobileGiveawayBanner = () => {
 
           <div className="mt-16 text-black text-body">
             <p>While supplies last</p>
-            <p>Something else legal will probably need to tell us</p>
+            <br />
+            <p>
+              By clicking “Connect Wallet”, you acknowledge and agree <br />
+              to abide by the Stellar Development Foundation’s <br />
+              <a href="https://fastcheapandoutofcontrol.com/rules/rpciege"
+              >RPCiege Official Rules</a
+              >, <a href="https://stellar.org/terms-of-service">Terms of Service</a>, and <a href="https://stellar.org/privacy-policy">Privacy Policy</a>.
+            </p>
           </div>
         </Pamphlet.Content>
       </Pamphlet>
@@ -171,7 +185,7 @@ const GiveawayButton = (props: { className?: string }) => {
         <p className="mt-6 max-w-[28rem] text-body-lg md:text-h5 md:font-capitolina">
           It looks like you don’t have enough cards in your wallet to be eligible for an RPCiege
           booster pack. But all is not lost! Keep completing RPCiege skirmishes to build your
-          collection and check back again! 
+          collection and check back again!
         </p>
 
         <a href={links.RPCIEGE_BOOKLET} className="mt-6 btn btn-primary md:w-max">
