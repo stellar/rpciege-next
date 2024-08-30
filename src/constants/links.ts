@@ -6,7 +6,7 @@ const linksBase = {
   RPCIEGE_BOOKLET: 'https://rpciege.com/booklet',
   SOROBAN: 'https://soroban.stellar.org',
   TOS: 'https://stellar.org/terms-of-service',
-  TWITTER: 'https://twitter.com/sorobanofficial',
+  TWITTER: 'https://twitter.com/BuildOnStellar',
   YOUTUBE: 'https://www.youtube.com/@SorobanOfficial',
 };
 
